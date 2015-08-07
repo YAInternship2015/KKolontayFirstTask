@@ -13,7 +13,9 @@
 		EEAAADEF1B6C0E2000EB9BD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */; };
 		EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */; };
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
-		EEAAAE091B6C0E8200EB9BD8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* TableViewController.m */; };
+		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
+		EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EECCC2411B74EC53008AABB7 /* PSKRepository.m */; };
+		EECCC2441B74F8BF008AABB7 /* gitignore.strings in Resources */ = {isa = PBXBuildFile; fileRef = EECCC2431B74F8BF008AABB7 /* gitignore.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EEAAADDE1B6C0E1F00EB9BD8 /* firstTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAAADE21B6C0E2000EB9BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAAADE31B6C0E2000EB9BD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEAAADE51B6C0E2000EB9BD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,11 +37,14 @@
 		EEAAADEC1B6C0E2000EB9BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EEAAADF11B6C0E2000EB9BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EEAAADF71B6C0E2000EB9BD8 /* firstTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEAAADF71B6C0E2000EB9BD8 /* PictureStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAAADFC1B6C0E2000EB9BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstTaskTests.m; sourceTree = "<group>"; };
-		EEAAAE071B6C0E8200EB9BD8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		EEAAAE081B6C0E8200EB9BD8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewController.h; sourceTree = "<group>"; };
+		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
+		EECCC2401B74EC53008AABB7 /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
+		EECCC2411B74EC53008AABB7 /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
+		EECCC2431B74F8BF008AABB7 /* gitignore.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = gitignore.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +68,8 @@
 		EEAAADD51B6C0E1F00EB9BD8 = {
 			isa = PBXGroup;
 			children = (
-				EEAAADE01B6C0E1F00EB9BD8 /* firstTask */,
+				EECCC2431B74F8BF008AABB7 /* gitignore.strings */,
+				EEAAADE01B6C0E1F00EB9BD8 /* PictureStorage */,
 				EEAAADFA1B6C0E2000EB9BD8 /* firstTaskTests */,
 				EEAAADDF1B6C0E1F00EB9BD8 /* Products */,
 			);
@@ -72,24 +78,26 @@
 		EEAAADDF1B6C0E1F00EB9BD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEAAADDE1B6C0E1F00EB9BD8 /* firstTask.app */,
-				EEAAADF71B6C0E2000EB9BD8 /* firstTaskTests.xctest */,
+				EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */,
+				EEAAADF71B6C0E2000EB9BD8 /* PictureStorageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EEAAADE01B6C0E1F00EB9BD8 /* firstTask */ = {
+		EEAAADE01B6C0E1F00EB9BD8 /* PictureStorage */ = {
 			isa = PBXGroup;
 			children = (
+				EECCC23F1B74EBC7008AABB7 /* Model */,
 				EEAAADE51B6C0E2000EB9BD8 /* AppDelegate.h */,
 				EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */,
 				EEAAADEB1B6C0E2000EB9BD8 /* Main.storyboard */,
 				EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */,
 				EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */,
 				EEAAADE11B6C0E1F00EB9BD8 /* Supporting Files */,
-				EEAAAE071B6C0E8200EB9BD8 /* TableViewController.h */,
-				EEAAAE081B6C0E8200EB9BD8 /* TableViewController.m */,
+				EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */,
+				EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */,
 			);
+			name = PictureStorage;
 			path = firstTask;
 			sourceTree = "<group>";
 		};
@@ -119,12 +127,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EECCC23F1B74EBC7008AABB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EECCC2401B74EC53008AABB7 /* PSKRepository.h */,
+				EECCC2411B74EC53008AABB7 /* PSKRepository.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEAAADDD1B6C0E1F00EB9BD8 /* firstTask */ = {
+		EEAAADDD1B6C0E1F00EB9BD8 /* PictureStorage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEAAAE011B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "firstTask" */;
+			buildConfigurationList = EEAAAE011B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "PictureStorage" */;
 			buildPhases = (
 				EEAAADDA1B6C0E1F00EB9BD8 /* Sources */,
 				EEAAADDB1B6C0E1F00EB9BD8 /* Frameworks */,
@@ -134,14 +151,14 @@
 			);
 			dependencies = (
 			);
-			name = firstTask;
+			name = PictureStorage;
 			productName = firstTask;
-			productReference = EEAAADDE1B6C0E1F00EB9BD8 /* firstTask.app */;
+			productReference = EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEAAADF61B6C0E2000EB9BD8 /* firstTaskTests */ = {
+		EEAAADF61B6C0E2000EB9BD8 /* PictureStorageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEAAAE041B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "firstTaskTests" */;
+			buildConfigurationList = EEAAAE041B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "PictureStorageTests" */;
 			buildPhases = (
 				EEAAADF31B6C0E2000EB9BD8 /* Sources */,
 				EEAAADF41B6C0E2000EB9BD8 /* Frameworks */,
@@ -152,9 +169,9 @@
 			dependencies = (
 				EEAAADF91B6C0E2000EB9BD8 /* PBXTargetDependency */,
 			);
-			name = firstTaskTests;
+			name = PictureStorageTests;
 			productName = firstTaskTests;
-			productReference = EEAAADF71B6C0E2000EB9BD8 /* firstTaskTests.xctest */;
+			productReference = EEAAADF71B6C0E2000EB9BD8 /* PictureStorageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EEAAADD91B6C0E1F00EB9BD8 /* Build configuration list for PBXProject "firstTask" */;
+			buildConfigurationList = EEAAADD91B6C0E1F00EB9BD8 /* Build configuration list for PBXProject "PictureStorage" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,8 +205,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEAAADDD1B6C0E1F00EB9BD8 /* firstTask */,
-				EEAAADF61B6C0E2000EB9BD8 /* firstTaskTests */,
+				EEAAADDD1B6C0E1F00EB9BD8 /* PictureStorage */,
+				EEAAADF61B6C0E2000EB9BD8 /* PictureStorageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAAADED1B6C0E2000EB9BD8 /* Main.storyboard in Resources */,
+				EECCC2441B74F8BF008AABB7 /* gitignore.strings in Resources */,
 				EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */,
 				EEAAADEF1B6C0E2000EB9BD8 /* Images.xcassets in Resources */,
 			);
@@ -219,8 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */,
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
-				EEAAAE091B6C0E8200EB9BD8 /* TableViewController.m in Sources */,
+				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +257,7 @@
 /* Begin PBXTargetDependency section */
 		EEAAADF91B6C0E2000EB9BD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EEAAADDD1B6C0E1F00EB9BD8 /* firstTask */;
+			target = EEAAADDD1B6C0E1F00EB9BD8 /* PictureStorage */;
 			targetProxy = EEAAADF81B6C0E2000EB9BD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -351,7 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PictureStorage;
 			};
 			name = Debug;
 		};
@@ -361,7 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PictureStorage;
 			};
 			name = Release;
 		};
@@ -379,8 +398,8 @@
 				);
 				INFOPLIST_FILE = firstTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstTask.app/firstTask";
+				PRODUCT_NAME = PictureStorageTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictureStorage.app/PictureStorage";
 			};
 			name = Debug;
 		};
@@ -394,15 +413,15 @@
 				);
 				INFOPLIST_FILE = firstTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstTask.app/firstTask";
+				PRODUCT_NAME = PictureStorageTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictureStorage.app/PictureStorage";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEAAADD91B6C0E1F00EB9BD8 /* Build configuration list for PBXProject "firstTask" */ = {
+		EEAAADD91B6C0E1F00EB9BD8 /* Build configuration list for PBXProject "PictureStorage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEAAADFF1B6C0E2000EB9BD8 /* Debug */,
@@ -411,21 +430,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEAAAE011B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "firstTask" */ = {
+		EEAAAE011B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "PictureStorage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEAAAE021B6C0E2000EB9BD8 /* Debug */,
 				EEAAAE031B6C0E2000EB9BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		EEAAAE041B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "firstTaskTests" */ = {
+		EEAAAE041B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "PictureStorageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEAAAE051B6C0E2000EB9BD8 /* Debug */,
 				EEAAAE061B6C0E2000EB9BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

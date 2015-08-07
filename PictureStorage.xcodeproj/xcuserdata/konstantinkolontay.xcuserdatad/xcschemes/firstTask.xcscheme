@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEAAADDD1B6C0E1F00EB9BD8"
-               BuildableName = "firstTask.app"
-               BlueprintName = "firstTask"
-               ReferencedContainer = "container:firstTask.xcodeproj">
+               BuildableName = "PictureStorage.app"
+               BlueprintName = "PictureStorage"
+               ReferencedContainer = "container:PictureStorage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEAAADF61B6C0E2000EB9BD8"
-               BuildableName = "firstTaskTests.xctest"
-               BlueprintName = "firstTaskTests"
-               ReferencedContainer = "container:firstTask.xcodeproj">
+               BuildableName = "PictureStorageTests.xctest"
+               BlueprintName = "PictureStorageTests"
+               ReferencedContainer = "container:PictureStorage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEAAADF61B6C0E2000EB9BD8"
-               BuildableName = "firstTaskTests.xctest"
-               BlueprintName = "firstTaskTests"
-               ReferencedContainer = "container:firstTask.xcodeproj">
+               BuildableName = "PictureStorageTests.xctest"
+               BlueprintName = "PictureStorageTests"
+               ReferencedContainer = "container:PictureStorage.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEAAADDD1B6C0E1F00EB9BD8"
-            BuildableName = "firstTask.app"
-            BlueprintName = "firstTask"
-            ReferencedContainer = "container:firstTask.xcodeproj">
+            BuildableName = "PictureStorage.app"
+            BlueprintName = "PictureStorage"
+            ReferencedContainer = "container:PictureStorage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEAAADDD1B6C0E1F00EB9BD8"
-            BuildableName = "firstTask.app"
-            BlueprintName = "firstTask"
-            ReferencedContainer = "container:firstTask.xcodeproj">
+            BuildableName = "PictureStorage.app"
+            BlueprintName = "PictureStorage"
+            ReferencedContainer = "container:PictureStorage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEAAADDD1B6C0E1F00EB9BD8"
-            BuildableName = "firstTask.app"
-            BlueprintName = "firstTask"
-            ReferencedContainer = "container:firstTask.xcodeproj">
+            BuildableName = "PictureStorage.app"
+            BlueprintName = "PictureStorage"
+            ReferencedContainer = "container:PictureStorage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

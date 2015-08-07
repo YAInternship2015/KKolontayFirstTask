@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSKRepository.h"
 
-@interface TableViewController : UITableViewController
-@property NSArray* array;
+@interface PSTableViewController : UITableViewController
+@property PSKRepository *repository;
 @end
