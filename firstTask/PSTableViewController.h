@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PSKRepository.h"
+#import "PSKCostomsTableViewCell.h"
 
-@interface PSTableViewController : UITableViewController
-@property PSKRepository *repository;
+@interface PSTableViewController : UITableViewController 
+
 @end

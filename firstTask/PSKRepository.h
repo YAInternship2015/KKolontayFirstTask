@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PSKItem.h"
 
-@interface PSKRepository : NSObject
-@property (atomic, strong) NSMutableArray *listOfPicture;
-@property (atomic, strong) NSArray *namePictures;
-- (id)init;
+@interface PSKRepository : NSObject {
+    @private
+    NSMutableArray *listOfCells;
+    NSArray *namePictures;
+}
+
++ (PSKRepository *)sharedInstance;
+
+- (PSKItem *)getCellImage:(NSInteger)index;
+
+- (NSInteger)getCount;
 @end

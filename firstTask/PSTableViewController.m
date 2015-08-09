@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(self.repository == nil)
-    self.repository = [[PSKRepository alloc] init];
    }
 
 - (void)didReceiveMemoryWarning {
@@ -31,29 +29,38 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#pragma mark - Namber of rows
 
-    return self.repository.listOfPicture.count;
+- (NSInteger)tableView:(UITableView *)tableView
+                        numberOfRowsInSection:(NSInteger)section {
+
+    return [[PSKRepository sharedInstance] getCount];
 }
 
+#pragma mark - Cell review
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+- (UITableViewCell *)tableView:(UITableView *)tableView
+                                cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSKCostomsTalbleViewCell"];
+    if (cell == nil) {
+       cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"PSKCostomsTalbleViewCell"];
     }
-    UIImage *image = [self.repository.listOfPicture objectAtIndex:indexPath.row];
+   // [(PSKCostomsTableViewCell *)cell addElements:[indexPath row]];
+    /*
+    UIImage *image = [[repository getCellImage:indexPath.row] getImage];
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(75, 75), NO, 0.0);
         [image drawInRect:CGRectMake(0, 0, 75, 75)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-    cell.imageView.image = newImage;
+   
+    UIImageView * imageViewCell = (UIImageView *)[cell viewWithTag:2];
+    imageViewCell.image = [[repository getCellImage:indexPath.row] getImage];
+    
     UILabel *label = (UILabel *)[cell viewWithTag:1];
-    NSString* nameOfPicture = [self.repository.namePictures  objectAtIndex:indexPath.row];
-    NSString* changedNameOfPicture = [nameOfPicture stringByReplacingCharactersInRange:NSMakeRange(0,1)
-                                                              withString:[[nameOfPicture substringToIndex:1] capitalizedString]];
-    label.text = changedNameOfPicture;
+    NSString* nameOfPicture = [[[repository getCellImage:indexPath.row] getName] capitalizedString] ;
+    label.text = nameOfPicture;*/
+    
     return cell;
 }
 

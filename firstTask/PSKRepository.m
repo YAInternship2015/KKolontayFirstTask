@@ -9,13 +9,40 @@
 #import "PSKRepository.h"
 
 @implementation PSKRepository
-- (id)init{
-    self = [super init];
-    self.namePictures = @[@"bogliasco",@"inIsrael",@"ladies",@"mountains",@"paradise",@"sunbathing",@"sunrise",@"TajMahal",@"underwater",@"young"];
-    self.listOfPicture = [[NSMutableArray alloc] init];
-    for (int i = 0; i < self.namePictures.count; i++) {
-        [self.listOfPicture addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[self.namePictures objectAtIndex:i]]]];
+
++ (PSKRepository *)sharedInstance
+{
+    static dispatch_once_t predicate = 0;
+    static id sharedObject = nil;
+      dispatch_once(&predicate, ^{
+          if (sharedObject == nil) {
+        sharedObject = [[self alloc] init];
+              [sharedObject setValues];        }
+    });
+    return sharedObject;
+}
+
+#pragma mark - Set values
+
+- (void) setValues {
+    namePictures = @[@"bogliasco",@"inIsrael",@"ladies",@"mountains",@"paradise",@"sunbathing",@"sunrise",@"TajMahal",@"underwater",@"young"];
+    
+    listOfCells = [[NSMutableArray alloc] init];
+    for (int i = 0; i < namePictures.count; i++) {
+        [listOfCells addObject:[[PSKItem alloc] initWithString:[namePictures objectAtIndex:i]]];
     }
-    return self;
+
+}
+
+#pragma mark - Get cell
+
+- (PSKItem *)getCellImage:(NSInteger)index {
+    return [listOfCells objectAtIndex:index];
+}
+
+#pragma mark - Get count of images
+
+- (NSInteger)getCount {
+    return [namePictures count];
 }
 @end
