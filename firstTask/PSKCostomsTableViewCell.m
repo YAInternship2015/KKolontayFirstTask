@@ -10,13 +10,19 @@
 
 @implementation PSKCostomsTableViewCell
 
-- (PSKCostomsTableViewCell *)addElements:(NSInteger)index {
-    UIImageView * imageViewCell = (UIImageView *)[self viewWithTag:2];
-    imageViewCell.image = [[[PSKRepository sharedInstance] getCellImage:index] getImage];
-    
-    UILabel *label = (UILabel *)[self viewWithTag:1];
-    NSString* nameOfPicture = [[[[PSKRepository sharedInstance] getCellImage:index] getName] capitalizedString] ;
-    label.text = nameOfPicture;
+#pragma mark - Init instance
+
+-(id)init {
+    self = [super init];
     return self;
+}
+
+#pragma mark - Set value image and string
+
+- (void)addElements:(NSInteger)index {
+    
+    _imagePictur.image = [[[PSKRepository sharedInstance] getCellImage:index] getImage];
+    
+    _namePicture.text = [[[[PSKRepository sharedInstance] getCellImage:index] getName] capitalizedString];
 }
 @end

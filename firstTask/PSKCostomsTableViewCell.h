@@ -11,6 +11,9 @@
 
 @interface PSKCostomsTableViewCell : UITableViewCell 
 
-- (PSKCostomsTableViewCell *)addElements:(NSInteger)index;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePictur;
+@property (weak, nonatomic) IBOutlet UILabel *namePicture;
+
+- (void)addElements:(NSInteger)index;
 
 @end

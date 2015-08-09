@@ -33,20 +33,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
                         numberOfRowsInSection:(NSInteger)section {
-
+    
     return [[PSKRepository sharedInstance] getCount];
+
 }
 
 #pragma mark - Cell review
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
+- (PSKCostomsTableViewCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSKCostomsTalbleViewCell"];
+    PSKCostomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
     if (cell == nil) {
-       cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"PSKCostomsTalbleViewCell"];
+       cell = (PSKCostomsTableViewCell *)[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
     }
-   // [(PSKCostomsTableViewCell *)cell addElements:[indexPath row]];
+    [cell addElements:indexPath.row];
     /*
     UIImage *image = [[repository getCellImage:indexPath.row] getImage];
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(75, 75), NO, 0.0);
