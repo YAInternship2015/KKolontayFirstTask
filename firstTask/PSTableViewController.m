@@ -14,6 +14,7 @@
 
 @implementation PSTableViewController
 
+#warning следующие два метода по сути ничего не делают, можно их удалить
 - (void)viewDidLoad {
     [super viewDidLoad];
    }
@@ -44,9 +45,13 @@
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PSKCostomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+
+#warning эта проверка не нужна была бы, если использовать метод - (id)dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath, который всегда возвращает ячейку
     if (cell == nil) {
        cell = (PSKCostomsTableViewCell *)[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
     }
+    
+#warning тут стоит обращаться к датасорсу, получать нужную модель для индекса, и передавать ее ячейке
     [cell addElements:indexPath.row];
     /*
     UIImage *image = [[repository getCellImage:indexPath.row] getImage];

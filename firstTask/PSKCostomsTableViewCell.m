@@ -12,6 +12,7 @@
 
 #pragma mark - Init instance
 
+#warning в таком init нет смысла, он ничего не привносит в стандартную реализацию. Можно смело его удалять
 -(id)init {
     self = [super init];
     return self;

@@ -10,6 +10,7 @@
 
 @implementation PSKRepository
 
+#warning синглтон - это антипаттерн, его если и использовать, то только в крайних случаях. В данном проекте можно спокойно обойтись и без него
 + (PSKRepository *)sharedInstance
 {
     static dispatch_once_t predicate = 0;
