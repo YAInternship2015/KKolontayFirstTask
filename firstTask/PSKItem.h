@@ -9,20 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PSKItem : NSObject {
-    @private
-#warning Избегайте использования ivar'ов, используйте @property, так будет проще изменить поведение в классах-наследниках. Эти проперти надо объявлять readwrite в *.m файле, и readonly в *.h файле, чтобы извне нельзя было модифицировать эти значения
+@interface PSKItem : NSObject
 
-#warning зачем здесь "cell" в названиях? какое отношение имеет модель к ячейке?
-    UIImage *imageCell;
-    NSString *nameCell;
-}
+    @property (readonly) NSString *name;
+    @property (readonly) UIImage *image;
 
 - (id)initWithString:(NSString *)name;
-
-#warning если в *.h файле объявить readonly свойства image и name, то эти методы будут не нужны
-- (NSString *)getName;
-
-- (UIImage *)getImage;
 
 @end

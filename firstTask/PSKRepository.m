@@ -10,22 +10,15 @@
 
 @implementation PSKRepository
 
-#warning синглтон - это антипаттерн, его если и использовать, то только в крайних случаях. В данном проекте можно спокойно обойтись и без него
-+ (PSKRepository *)sharedInstance
-{
-    static dispatch_once_t predicate = 0;
-    static id sharedObject = nil;
-      dispatch_once(&predicate, ^{
-          if (sharedObject == nil) {
-        sharedObject = [[self alloc] init];
-              [sharedObject setValues];        }
-    });
-    return sharedObject;
-}
+NSMutableArray *listOfCells;
+NSArray *namePictures;
 
-#pragma mark - Set values
+#pragma mark - Initialization item and set values
 
-- (void) setValues {
+-(id)init {
+    
+    self=[super init];
+    
     namePictures = @[@"bogliasco",@"inIsrael",@"ladies",@"mountains",@"paradise",@"sunbathing",@"sunrise",@"TajMahal",@"underwater",@"young"];
     
     listOfCells = [[NSMutableArray alloc] init];
@@ -33,17 +26,22 @@
         [listOfCells addObject:[[PSKItem alloc] initWithString:[namePictures objectAtIndex:i]]];
     }
 
+    return self;
 }
 
 #pragma mark - Get cell
 
-- (PSKItem *)getCellImage:(NSInteger)index {
+- (PSKItem *)valueForCustom:(NSInteger)index {
+    
     return [listOfCells objectAtIndex:index];
+    
 }
 
 #pragma mark - Get count of images
 
-- (NSInteger)getCount {
+- (NSInteger)countOfItems {
+    
     return [namePictures count];
+    
 }
 @end
