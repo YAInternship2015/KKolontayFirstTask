@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE4AC70F1B770677007E900D /* PSKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC70E1B770677007E900D /* PSKItem.m */; };
-		EE4AC7131B771A0F007E900D /* PSKCostomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC7121B771A0F007E900D /* PSKCostomsTableViewCell.m */; };
+		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE31B6C0E2000EB9BD8 /* main.m */; };
 		EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */; };
 		EEAAADED1B6C0E2000EB9BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADEB1B6C0E2000EB9BD8 /* Main.storyboard */; };
@@ -32,8 +32,8 @@
 /* Begin PBXFileReference section */
 		EE4AC70D1B770677007E900D /* PSKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItem.h; sourceTree = "<group>"; };
 		EE4AC70E1B770677007E900D /* PSKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItem.m; sourceTree = "<group>"; };
-		EE4AC7111B771A0F007E900D /* PSKCostomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCostomsTableViewCell.h; sourceTree = "<group>"; };
-		EE4AC7121B771A0F007E900D /* PSKCostomsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCostomsTableViewCell.m; sourceTree = "<group>"; };
+		EE50F4001B79DF6C00CC8059 /* PSKCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomCell.h; sourceTree = "<group>"; };
+		EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomCell.m; sourceTree = "<group>"; };
 		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAAADE21B6C0E2000EB9BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAAADE31B6C0E2000EB9BD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		EE4AC7101B7719D9007E900D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EE4AC7111B771A0F007E900D /* PSKCostomsTableViewCell.h */,
-				EE4AC7121B771A0F007E900D /* PSKCostomsTableViewCell.m */,
+				EE50F4001B79DF6C00CC8059 /* PSKCustomCell.h */,
+				EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 				EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */,
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
-				EE4AC7131B771A0F007E900D /* PSKCostomsTableViewCell.m in Sources */,
+				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
 				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
 			);

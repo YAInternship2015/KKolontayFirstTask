@@ -9,16 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PSKItem : NSObject {
-    @private
-    UIImage *imageCell;
-    NSString *nameCell;
-}
+@interface PSKItem : NSObject
+
+    @property (readonly) NSString *name;
+    @property (readonly) UIImage *image;
 
 - (id)initWithString:(NSString *)name;
-
-- (NSString *)getName;
-
-- (UIImage *)getImage;
 
 @end

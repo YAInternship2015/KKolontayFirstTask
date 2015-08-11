@@ -15,22 +15,10 @@
 - (id)initWithString:(NSString *)name {
     self = [super init];
     
-    nameCell = name;
-    imageCell = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", nameCell]];
+    _name = name;
+    _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
     
     return self;
-}
-
-#pragma mark - Get name cell
-
-- (NSString *)getName {
-    return nameCell;
-}
-
-#pragma mark - Get image cell
-
-- (UIImage *)getImage {
-    return imageCell;
 }
 
 @end

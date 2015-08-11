@@ -10,15 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "PSKItem.h"
 
-@interface PSKRepository : NSObject {
-    @private
-    NSMutableArray *listOfCells;
-    NSArray *namePictures;
-}
+@interface PSKRepository : NSObject
 
-+ (PSKRepository *)sharedInstance;
+- (PSKItem *)valueForCustom:(NSInteger)index;
 
-- (PSKItem *)getCellImage:(NSInteger)index;
+- (NSInteger)countOfItems;
 
-- (NSInteger)getCount;
 @end
