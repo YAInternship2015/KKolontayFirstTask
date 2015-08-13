@@ -46,7 +46,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="myImageView" destination="z6o-hP-xwC" id="vcY-eL-EZa"/>
+                                    <outlet property="imageDisplay" destination="z6o-hP-xwC" id="ukR-TR-wU9"/>
                                     <outlet property="nameImage" destination="5Qe-9H-21D" id="5Kc-eA-E94"/>
                                 </connections>
                             </tableViewCell>
