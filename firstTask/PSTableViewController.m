@@ -15,6 +15,7 @@
 
 @implementation PSTableViewController
 
+#warning это должно быть @property
 PSKRepository *repository;
 
 - (void)viewDidLoad {
@@ -41,7 +42,6 @@ PSKRepository *repository;
 }
 
 #pragma mark - Cell review
-
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

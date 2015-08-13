@@ -14,7 +14,7 @@
 
 - (id)initWithString:(NSString *)name {
     self = [super init];
-    
+#warning где проверка if (self) ?
     _name = name;
     _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
     

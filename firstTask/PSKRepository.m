@@ -10,15 +10,17 @@
 
 @implementation PSKRepository
 
+#warning эти вещи должны быть объявлены как @property внутри *.m файла
+#warning listOfCells - зачем здесь слово Cell? здесь ведь не хранятся ячейки
 NSMutableArray *listOfCells;
 NSArray *namePictures;
 
 #pragma mark - Initialization item and set values
 
 -(id)init {
-    
+#warning здесь не должно быть пустой строки. Перед и после "=" должны быть пробелы
     self=[super init];
-    
+#warning здесь также не должно быть пустой строки. В объявлении массива после запятой перед сделующим элементом должен быть пробел
     namePictures = @[@"bogliasco",@"inIsrael",@"ladies",@"mountains",@"paradise",@"sunbathing",@"sunrise",@"TajMahal",@"underwater",@"young"];
     
     listOfCells = [[NSMutableArray alloc] init];

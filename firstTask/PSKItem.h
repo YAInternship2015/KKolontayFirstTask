@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PSKItem : NSObject
-
+#warning неверные отступы
+#warning не забывайте писать nonatomic и strong
     @property (readonly) NSString *name;
     @property (readonly) UIImage *image;
 
