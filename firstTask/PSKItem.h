@@ -11,8 +11,8 @@
 
 @interface PSKItem : NSObject
 
-    @property (readonly) NSString *name;
-    @property (readonly) UIImage *image;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) UIImage *image;
 
 - (id)initWithString:(NSString *)name;
 

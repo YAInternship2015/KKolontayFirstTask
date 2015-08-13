@@ -8,9 +8,11 @@
 
 #import "PSKCustomCell.h"
 
-@interface PSKCustomCell()
-    @property(weak, nonatomic) IBOutlet UIImageView *myImageView;
-    @property(weak, nonatomic) IBOutlet UILabel *nameImage;
+@interface PSKCustomCell ()
+
+@property(nonatomic, weak) IBOutlet UIImageView *imageDisplay;
+@property(nonatomic, weak) IBOutlet UILabel *nameImage;
+
 @end
 
 @implementation PSKCustomCell
@@ -18,9 +20,9 @@
 #pragma mark - Display content in cell
 
 - (void)initWithItem:(PSKItem *)item {
-    
-    _myImageView.image = item.image;
+    _imageDisplay.image = item.image;
     _nameImage.text = item.name;
     
 }
+
 @end

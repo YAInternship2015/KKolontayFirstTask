@@ -10,6 +10,7 @@
 #import "PSKItem.h"
 
 @interface PSKCustomCell : UITableViewCell
+
 - (void)initWithItem:(PSKItem *)item;
 
 @end
