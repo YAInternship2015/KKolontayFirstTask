@@ -14,10 +14,10 @@
 
 - (id)initWithString:(NSString *)name {
     self = [super init];
-#warning где проверка if (self) ?
+    if (self != nil) {
     _name = name;
     _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
-    
+    }
     return self;
 }
 

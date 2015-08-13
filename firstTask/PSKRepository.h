@@ -12,9 +12,7 @@
 
 @interface PSKRepository : NSObject
 
-#warning Имя метода не говорит ничего о самом методе. А здесь по факту мы получаем модель PSKItem по индексу. "говорящее" имя для данного метода - itemAtIndex:
-- (PSKItem *)valueForCustom:(NSInteger)index;
-#warning Здесь не должно быть пустой строки
+- (PSKItem *)itemAtIndex:(NSInteger)index;
 - (NSInteger)countOfItems;
 
 @end

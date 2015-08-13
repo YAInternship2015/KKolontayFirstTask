@@ -8,42 +8,41 @@
 
 #import "PSKRepository.h"
 
+@interface PSKRepository ()
+
+@property(nonatomic, strong) NSMutableArray *listOfPictures;
+@property(nonatomic, strong) NSArray *namePictures;
+
+@end
+
 @implementation PSKRepository
 
-#warning эти вещи должны быть объявлены как @property внутри *.m файла
-#warning listOfCells - зачем здесь слово Cell? здесь ведь не хранятся ячейки
-NSMutableArray *listOfCells;
-NSArray *namePictures;
 
 #pragma mark - Initialization item and set values
 
 -(id)init {
-#warning здесь не должно быть пустой строки. Перед и после "=" должны быть пробелы
-    self=[super init];
-#warning здесь также не должно быть пустой строки. В объявлении массива после запятой перед сделующим элементом должен быть пробел
-    namePictures = @[@"bogliasco",@"inIsrael",@"ladies",@"mountains",@"paradise",@"sunbathing",@"sunrise",@"TajMahal",@"underwater",@"young"];
+    self = [super init];
+    if (self != nil) {
+    _namePictures = @[@"bogliasco", @"inIsrael", @"ladies", @"mountains",@"paradise",@"sunbathing",@"sunrise", @"TajMahal", @"underwater", @"young"];
     
-    listOfCells = [[NSMutableArray alloc] init];
-    for (int i = 0; i < namePictures.count; i++) {
-        [listOfCells addObject:[[PSKItem alloc] initWithString:[namePictures objectAtIndex:i]]];
+    _listOfPictures = [[NSMutableArray alloc] init];
+    for (int i = 0; i < _namePictures.count; i++) {
+        [_listOfPictures addObject:[[PSKItem alloc] initWithString:[_namePictures objectAtIndex:i]]];
+        }
     }
-
     return self;
 }
 
 #pragma mark - Get cell
 
-- (PSKItem *)valueForCustom:(NSInteger)index {
-    
-    return [listOfCells objectAtIndex:index];
-    
+- (PSKItem *)itemAtIndex:(NSInteger)index {
+    return [_listOfPictures objectAtIndex:index];
 }
 
 #pragma mark - Get count of images
 
 - (NSInteger)countOfItems {
-    
-    return [namePictures count];
-    
+    return [_namePictures count];
 }
+
 @end

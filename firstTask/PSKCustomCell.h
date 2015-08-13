@@ -10,7 +10,7 @@
 #import "PSKItem.h"
 
 @interface PSKCustomCell : UITableViewCell
-#warning после @interface и перед @end должны быть пустые строки
+
 - (void)initWithItem:(PSKItem *)item;
 
 @end
