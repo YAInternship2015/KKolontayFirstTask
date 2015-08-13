@@ -18,7 +18,7 @@
 #pragma mark - Display content in cell
 
 - (void)initWithItem:(PSKItem *)item {
-    
+
     _myImageView.image = item.image;
     _nameImage.text = item.name;
     
