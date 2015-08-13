@@ -12,8 +12,7 @@
 
 @interface PSKRepository : NSObject
 
-- (PSKItem *)valueForCustom:(NSInteger)index;
-
+- (PSKItem *)itemAtIndex:(NSInteger)index;
 - (NSInteger)countOfItems;
 
 @end
