@@ -24,7 +24,6 @@
     self = [super init];
     if (self != nil) {
     _namePictures = @[@"bogliasco", @"inIsrael", @"ladies", @"mountains",@"paradise",@"sunbathing",@"sunrise", @"TajMahal", @"underwater", @"young"];
-    
     _listOfPictures = [[NSMutableArray alloc] init];
     for (int i = 0; i < _namePictures.count; i++) {
         [_listOfPictures addObject:[[PSKItem alloc] initWithString:[_namePictures objectAtIndex:i]]];
