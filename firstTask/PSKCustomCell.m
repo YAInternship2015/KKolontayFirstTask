@@ -22,6 +22,7 @@
 - (void)initWithItem:(PSKItem *)item {
     _imageDisplay.image = item.image;
     _nameImage.text = item.name;
+    
 }
 
 @end

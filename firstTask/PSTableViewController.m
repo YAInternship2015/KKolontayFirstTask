@@ -19,12 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _repository = [[PSKRepository alloc]init];
-   }
+    
+}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+    
 }
 
 #pragma mark - Namber of rows
@@ -32,6 +34,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
                         numberOfRowsInSection:(NSInteger)section {
     return [_repository countOfItems ];
+    
 }
 
 #pragma mark - Cell review
@@ -40,6 +43,7 @@
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     [cell initWithItem:[_repository itemAtIndex:indexPath.row]];
     return cell;
+    
 }
 
 @end

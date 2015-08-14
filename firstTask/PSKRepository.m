@@ -23,25 +23,28 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-    _namePictures = @[@"bogliasco", @"inIsrael", @"ladies", @"mountains",@"paradise",@"sunbathing",@"sunrise", @"TajMahal", @"underwater", @"young"];
+    _namePictures = @[@"bogliasco", @"inIsrael", @"ladies", @"mountains", @"paradise", @"sunbathing", @"sunrise", @"TajMahal", @"underwater", @"young"];
     _listOfPictures = [[NSMutableArray alloc] init];
     for (int i = 0; i < _namePictures.count; i++) {
         [_listOfPictures addObject:[[PSKItem alloc] initWithString:[_namePictures objectAtIndex:i]]];
         }
     }
     return self;
+    
 }
 
 #pragma mark - Get cell
 
 - (PSKItem *)itemAtIndex:(NSInteger)index {
     return [_listOfPictures objectAtIndex:index];
+    
 }
 
 #pragma mark - Get count of images
 
 - (NSInteger)countOfItems {
     return [_namePictures count];
+    
 }
 
 @end

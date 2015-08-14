@@ -19,6 +19,7 @@
     _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
     }
     return self;
+    
 }
 
 @end
