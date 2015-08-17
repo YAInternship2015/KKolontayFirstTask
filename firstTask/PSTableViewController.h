@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#warning здесь не нужны импорты PSKRepository и PSKCustomCell
 #import "PSKRepository.h"
 #import "PSKCustomCell.h"
 

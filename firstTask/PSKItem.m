@@ -14,7 +14,9 @@
 
 - (id)initWithString:(NSString *)name {
     self = [super init];
+#warning достаточно провеки if (self)
     if (self != nil) {
+#warning здесь нужен сдвиг вправо
     _name = name;
     _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
     }

@@ -10,6 +10,7 @@
 
 @interface PSKCustomCell ()
 
+#warning перед открывающейся скобкой должен быть пробел
 @property(nonatomic, weak) IBOutlet UIImageView *imageDisplay;
 @property(nonatomic, weak) IBOutlet UILabel *nameImage;
 
@@ -22,7 +23,7 @@
 - (void)initWithItem:(PSKItem *)item {
     _imageDisplay.image = item.image;
     _nameImage.text = item.name;
-    
+#warning здесь не нужна пустая строка
 }
 
 @end
