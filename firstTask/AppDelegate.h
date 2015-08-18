@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#warning Все еще остались некоторые огрехи в форматировании. Раскидал ворнинги по коду
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;

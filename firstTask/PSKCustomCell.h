@@ -11,7 +11,6 @@
 
 @interface PSKCustomCell : UITableViewCell
 
-#warning если метод начинается на слово "init", то он должен создавать объект и возвращать его. Здесь же никакого создания не происходит, лучше init заменить на setup
-- (void)initWithItem:(PSKItem *)item;
+- (void)setupWithItem:(PSKItem *)item;
 
 @end
