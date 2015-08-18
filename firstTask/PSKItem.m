@@ -14,12 +14,11 @@
 
 - (id)initWithString:(NSString *)name {
     self = [super init];
-    if (self != nil) {
-    _name = name;
-    _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
+    if (self) {
+        _name = name;
+        _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
     }
     return self;
-    
 }
 
 @end

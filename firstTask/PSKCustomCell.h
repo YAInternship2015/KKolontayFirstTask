@@ -11,6 +11,6 @@
 
 @interface PSKCustomCell : UITableViewCell
 
-- (void)initWithItem:(PSKItem *)item;
+- (void)setupWithItem:(PSKItem *)item;
 
 @end
