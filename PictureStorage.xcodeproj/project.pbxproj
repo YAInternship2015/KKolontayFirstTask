@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE2E8AD31B84F1BC00B73F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */; };
 		EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B081B84723800402816 /* PSKContainerViewController.m */; };
 		EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */; };
+		EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */; };
 		EE4AC70F1B770677007E900D /* PSKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC70E1B770677007E900D /* PSKItem.m */; };
 		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE31B6C0E2000EB9BD8 /* main.m */; };
 		EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */; };
-		EEAAADED1B6C0E2000EB9BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADEB1B6C0E2000EB9BD8 /* Main.storyboard */; };
 		EEAAADEF1B6C0E2000EB9BD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */; };
 		EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */; };
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
@@ -32,10 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE2E8AD21B84F1BC00B73F6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE317B071B84723800402816 /* PSKContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKContainerViewController.h; sourceTree = "<group>"; };
 		EE317B081B84723800402816 /* PSKContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKContainerViewController.m; sourceTree = "<group>"; };
 		EE317B0A1B8474C800402816 /* PSKAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKAddItemViewController.h; sourceTree = "<group>"; };
 		EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKAddItemViewController.m; sourceTree = "<group>"; };
+		EE317B0D1B84ABB400402816 /* PSKMainWithContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKMainWithContainerViewController.h; sourceTree = "<group>"; };
+		EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKMainWithContainerViewController.m; sourceTree = "<group>"; };
 		EE4AC70D1B770677007E900D /* PSKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItem.h; sourceTree = "<group>"; };
 		EE4AC70E1B770677007E900D /* PSKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItem.m; sourceTree = "<group>"; };
 		EE50F4001B79DF6C00CC8059 /* PSKCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomCell.h; sourceTree = "<group>"; };
@@ -45,7 +49,6 @@
 		EEAAADE31B6C0E2000EB9BD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEAAADE51B6C0E2000EB9BD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EEAAADEC1B6C0E2000EB9BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EEAAADF11B6C0E2000EB9BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EEAAADF71B6C0E2000EB9BD8 /* PictureStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,8 @@
 				EE317B081B84723800402816 /* PSKContainerViewController.m */,
 				EE317B0A1B8474C800402816 /* PSKAddItemViewController.h */,
 				EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */,
+				EE317B0D1B84ABB400402816 /* PSKMainWithContainerViewController.h */,
+				EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -109,11 +114,11 @@
 		EEAAADE01B6C0E1F00EB9BD8 /* PictureStorage */ = {
 			isa = PBXGroup;
 			children = (
+				EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */,
 				EE4AC7101B7719D9007E900D /* View */,
 				EECCC23F1B74EBC7008AABB7 /* Model */,
 				EEAAADE51B6C0E2000EB9BD8 /* AppDelegate.h */,
 				EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */,
-				EEAAADEB1B6C0E2000EB9BD8 /* Main.storyboard */,
 				EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */,
 				EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */,
 				EEAAADE11B6C0E1F00EB9BD8 /* Supporting Files */,
@@ -241,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEAAADED1B6C0E2000EB9BD8 /* Main.storyboard in Resources */,
+				EE2E8AD31B84F1BC00B73F6C /* Main.storyboard in Resources */,
 				EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */,
 				EEAAADEF1B6C0E2000EB9BD8 /* Images.xcassets in Resources */,
 			);
@@ -267,6 +272,7 @@
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
+				EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */,
 				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
 			);
@@ -291,10 +297,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EEAAADEB1B6C0E2000EB9BD8 /* Main.storyboard */ = {
+		EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EEAAADEC1B6C0E2000EB9BD8 /* Base */,
+				EE2E8AD21B84F1BC00B73F6C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

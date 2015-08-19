@@ -1,5 +1,5 @@
 //
-//  PSKContainerViewController.h
+//  PSKMainWithContainerViewController.h
 //  PictureStorage
 //
 //  Created by Konstantin Kolontay on 8/19/15.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSKContainerViewController : UIViewController
+@interface PSKMainWithContainerViewController : UIViewController
 
-- (void)swapViewControllers:(NSString *) segueIdentifier;
 @end
