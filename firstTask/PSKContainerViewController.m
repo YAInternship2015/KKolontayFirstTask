@@ -7,6 +7,7 @@
 //
 
 #import "PSKContainerViewController.h"
+#import "PSTableViewController.h"
 
 @interface PSKContainerViewController ()
 
@@ -31,26 +32,32 @@
         }
         else {
             [self addChildViewController:segue.destinationViewController];
-            ((UIViewController *)segue.destinationViewController).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-            [self.view addSubview:((UIViewController *)segue.destinationViewController).view];
+            ((PSTableViewController *)segue.destinationViewController).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            [self.view addSubview:((PSTableViewController *)segue.destinationViewController).view];
             [segue.destinationViewController didMoveToParentViewController:self];
         }
     }
-    else if ([segue.identifier isEqualToString:@"addItem"]) {
+    else if ([segue.identifier isEqualToString:@"collectionItems"]) {
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
+    }
+    else if ([segue.identifier isEqualToString:@"addItem"]) {
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
 }
 
-#pragma mark - swap from view controller to another view controller 
+#pragma mark - swap from view controller to another view controller
 
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL finished){
+    [fromViewController removeFromParentViewController];
+    [toViewController didMoveToParentViewController:self];
+
+   /* [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL finished){
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
-    }];
+    }];*/
 }
 
 #pragma mark - change current segue identificator

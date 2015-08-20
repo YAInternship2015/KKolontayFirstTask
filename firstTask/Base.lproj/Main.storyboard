@@ -69,7 +69,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nik-3E-oUs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fwg-H2-D00">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-mc-Gja">
@@ -80,7 +80,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzk-9L-edf">
-                                <rect key="frame" x="249" y="343" width="103" height="50"/>
+                                <rect key="frame" x="249" y="343" width="103" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="1Am-q0-FEp"/>
                                 </constraints>
@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OKi-d4-TyG">
-                                <rect key="frame" x="155" y="411" width="291" height="30"/>
+                                <rect key="frame" x="155" y="471" width="291" height="30"/>
                                 <color key="backgroundColor" red="0.89009666440000001" green="0.89009666440000001" blue="0.89009666440000001" alpha="0.75" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="291" id="X1N-Pi-Lam"/>
@@ -101,18 +101,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add image's name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lO-wJ-X0R">
-                                <rect key="frame" x="221" y="455" width="158" height="21"/>
+                                <rect key="frame" x="221" y="515" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNi-W7-Q05">
-                                <rect key="frame" x="221" y="501" width="30" height="30"/>
+                                <rect key="frame" x="221" y="561" width="30" height="30"/>
                                 <state key="normal" title="Ok">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-vR-uEU">
-                                <rect key="frame" x="319" y="501" width="60" height="30"/>
+                                <rect key="frame" x="319" y="561" width="60" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -150,7 +150,7 @@
             <objects>
                 <tableViewController id="6wy-IP-M7r" customClass="PSTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="zI7-u3-HDO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -202,28 +202,36 @@
             </objects>
             <point key="canvasLocation" x="1214" y="287"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Collection Presenter View Controller-->
         <scene sceneID="T4J-Rr-GBo">
             <objects>
-                <collectionViewController id="aFe-65-zuu" sceneMemberID="viewController">
+                <collectionViewController id="aFe-65-zuu" customClass="PSKCollectionPresenterViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4Vk-JE-8Ja">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i6o-xA-pxw">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="5Um-QP-Lfn">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="5Um-QP-Lfn" customClass="PSKItemCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1M-q1-iMp">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="image" destination="q1M-q1-iMp" id="lXl-Yn-qPP"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -251,9 +259,9 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <segue destination="6wy-IP-M7r" kind="show" identifier="tableItems" id="xZH-xU-oPl"/>
-                        <segue destination="aFe-65-zuu" kind="show" identifier="collectionItems" id="Ww4-rH-wgR"/>
-                        <segue destination="4aI-OG-Kb8" kind="show" identifier="addItem" id="zzZ-Nv-J8G"/>
+                        <segue destination="6wy-IP-M7r" kind="custom" identifier="tableItems" customClass="PSKCustomSegue" id="xZH-xU-oPl"/>
+                        <segue destination="aFe-65-zuu" kind="custom" identifier="collectionItems" customClass="PSKCustomCollectionItemsSegue" id="Ww4-rH-wgR"/>
+                        <segue destination="4aI-OG-Kb8" kind="custom" identifier="addItem" customClass="PSKCustomAddItemSegue" id="zzZ-Nv-J8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HR-3W-xbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
