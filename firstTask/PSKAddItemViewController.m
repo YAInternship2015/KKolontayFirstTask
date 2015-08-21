@@ -10,9 +10,9 @@
 
 @interface PSKAddItemViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) UIImage *choosenImage;
-@property (strong, nonatomic) UIImagePickerController *imagePicker;
+@property (nonatomic,weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIImage *choosenImage;
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @end
 
@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 - (IBAction)chooseImage:(id)sender {
     _imagePicker = [[UIImagePickerController alloc]init];

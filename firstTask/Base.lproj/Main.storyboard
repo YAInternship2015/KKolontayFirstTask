@@ -260,9 +260,9 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <segue destination="6wy-IP-M7r" kind="custom" identifier="tableItems" customClass="PSKCustomSegue" id="xZH-xU-oPl"/>
+                        <segue destination="6wy-IP-M7r" kind="custom" identifier="tableItems" id="xZH-xU-oPl"/>
                         <segue destination="aFe-65-zuu" kind="custom" identifier="collectionItems" id="Ww4-rH-wgR"/>
-                        <segue destination="4aI-OG-Kb8" kind="custom" identifier="addItem" customClass="PSKCustomAddItemSegue" id="zzZ-Nv-J8G"/>
+                        <segue destination="4aI-OG-Kb8" kind="custom" identifier="addItem" id="zzZ-Nv-J8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HR-3W-xbr" userLabel="First Responder" sceneMemberID="firstResponder"/>

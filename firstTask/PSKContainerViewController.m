@@ -8,10 +8,15 @@
 
 #import "PSKContainerViewController.h"
 #import "PSTableViewController.h"
+#import "PSKCollectionPresenterViewController.h"
+#import "PSKAddItemViewController.h"
 
 @interface PSKContainerViewController ()
 
-@property (strong, nonatomic) NSString *currentSegueIdentifier;
+@property (nonatomic, strong) NSString *currentSegueIdentifier;
+@property (nonatomic, weak) PSTableViewController *tableViewController;
+@property (nonatomic, weak) PSKCollectionPresenterViewController *collectionPresenterController;
+@property (nonatomic, weak) PSKAddItemViewController *addItemController;
 
 @end
 
@@ -31,14 +36,16 @@
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0]toViewController:segue.destinationViewController];
         }
         else {
-            [self addChildViewController:segue.destinationViewController];
-            ((PSTableViewController *)segue.destinationViewController).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-            [self.view addSubview:((PSTableViewController *)segue.destinationViewController).view];
-            [segue.destinationViewController didMoveToParentViewController:self];
+            _tableViewController = segue.destinationViewController;
+            [self addChildViewController:_tableViewController];
+            _tableViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            [self.view addSubview:_tableViewController.view];
+            [_tableViewController didMoveToParentViewController:self];
         }
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
-            [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
+        _collectionPresenterController = segue.destinationViewController;
+            [self swapFromViewController:_tableViewController toViewController:_collectionPresenterController];
     }
     else if ([segue.identifier isEqualToString:@"addItem"]) {
         [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
@@ -53,10 +60,9 @@
    // toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [fromViewController willMoveToParentViewController:nil];
     
-   [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL done){
-               [toViewController didMoveToParentViewController:self];
+   [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL done){
                [fromViewController removeFromParentViewController];
-
+               [toViewController didMoveToParentViewController:self];
     }];
 }
 
