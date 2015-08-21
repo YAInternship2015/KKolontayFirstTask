@@ -216,7 +216,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="5Um-QP-Lfn" customClass="PSKItemCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="5Um-QP-Lfn" customClass="PSKItemCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -229,8 +229,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="image" destination="q1M-q1-iMp" id="lXl-Yn-qPP"/>
+                                    <outlet property="imageItem" destination="q1M-q1-iMp" id="EyQ-8q-UGZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -260,7 +261,7 @@
                     <toolbarItems/>
                     <connections>
                         <segue destination="6wy-IP-M7r" kind="custom" identifier="tableItems" customClass="PSKCustomSegue" id="xZH-xU-oPl"/>
-                        <segue destination="aFe-65-zuu" kind="custom" identifier="collectionItems" customClass="PSKCustomCollectionItemsSegue" id="Ww4-rH-wgR"/>
+                        <segue destination="aFe-65-zuu" kind="custom" identifier="collectionItems" id="Ww4-rH-wgR"/>
                         <segue destination="4aI-OG-Kb8" kind="custom" identifier="addItem" customClass="PSKCustomAddItemSegue" id="zzZ-Nv-J8G"/>
                     </connections>
                 </viewController>
