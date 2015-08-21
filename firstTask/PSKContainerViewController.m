@@ -44,8 +44,7 @@
         }
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
-        _collectionPresenterController = segue.destinationViewController;
-            [self swapFromViewController:_tableViewController toViewController:_collectionPresenterController];
+            [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
     else if ([segue.identifier isEqualToString:@"addItem"]) {
         [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
@@ -56,11 +55,8 @@
 
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
     [self addChildViewController:toViewController];
-    //[self.view addSubview:toViewController.view];
-   // toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [fromViewController willMoveToParentViewController:nil];
-    
-   [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL done){
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion: ^(BOOL done) {
                [fromViewController removeFromParentViewController];
                [toViewController didMoveToParentViewController:self];
     }];
