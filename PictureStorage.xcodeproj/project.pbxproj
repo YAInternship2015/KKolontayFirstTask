@@ -14,9 +14,6 @@
 		EE4AC70F1B770677007E900D /* PSKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC70E1B770677007E900D /* PSKItem.m */; };
 		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */; };
-		EE7BD01F1B866A410082B4A2 /* PSKCustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD01E1B866A410082B4A2 /* PSKCustomSegue.m */; };
-		EE7BD0221B8672D60082B4A2 /* PSKCustomAddItemSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0211B8672D60082B4A2 /* PSKCustomAddItemSegue.m */; };
-		EE7BD0251B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0241B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.m */; };
 		EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */; };
 		EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE31B6C0E2000EB9BD8 /* main.m */; };
 		EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE61B6C0E2000EB9BD8 /* AppDelegate.m */; };
@@ -51,12 +48,6 @@
 		EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomCell.m; sourceTree = "<group>"; };
 		EE7BD01A1B8652530082B4A2 /* PSKCollectionPresenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCollectionPresenterViewController.h; sourceTree = "<group>"; };
 		EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCollectionPresenterViewController.m; sourceTree = "<group>"; };
-		EE7BD01D1B866A410082B4A2 /* PSKCustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomSegue.h; sourceTree = "<group>"; };
-		EE7BD01E1B866A410082B4A2 /* PSKCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomSegue.m; sourceTree = "<group>"; };
-		EE7BD0201B8672D60082B4A2 /* PSKCustomAddItemSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomAddItemSegue.h; sourceTree = "<group>"; };
-		EE7BD0211B8672D60082B4A2 /* PSKCustomAddItemSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomAddItemSegue.m; sourceTree = "<group>"; };
-		EE7BD0231B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomCollectionItemsSegue.h; sourceTree = "<group>"; };
-		EE7BD0241B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomCollectionItemsSegue.m; sourceTree = "<group>"; };
 		EE7BD0261B86762B0082B4A2 /* PSKItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemCollectionViewCell.h; sourceTree = "<group>"; };
 		EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemCollectionViewCell.m; sourceTree = "<group>"; };
 		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,12 +134,6 @@
 				EEAAADE11B6C0E1F00EB9BD8 /* Supporting Files */,
 				EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */,
 				EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */,
-				EE7BD01D1B866A410082B4A2 /* PSKCustomSegue.h */,
-				EE7BD01E1B866A410082B4A2 /* PSKCustomSegue.m */,
-				EE7BD0201B8672D60082B4A2 /* PSKCustomAddItemSegue.h */,
-				EE7BD0211B8672D60082B4A2 /* PSKCustomAddItemSegue.m */,
-				EE7BD0231B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.h */,
-				EE7BD0241B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.m */,
 			);
 			name = PictureStorage;
 			path = firstTask;
@@ -293,10 +278,7 @@
 			files = (
 				EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */,
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
-				EE7BD01F1B866A410082B4A2 /* PSKCustomSegue.m in Sources */,
-				EE7BD0251B8674A60082B4A2 /* PSKCustomCollectionItemsSegue.m in Sources */,
 				EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */,
-				EE7BD0221B8672D60082B4A2 /* PSKCustomAddItemSegue.m in Sources */,
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
 				EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
