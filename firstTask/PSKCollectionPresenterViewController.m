@@ -7,12 +7,9 @@
 //
 
 #import "PSKCollectionPresenterViewController.h"
-#import "PSKRepository.h"
 #import "PSKItemCollectionViewCell.h"
 
 @interface PSKCollectionPresenterViewController ()
-
-@property (strong, nonatomic) PSKRepository *repository;
 
 @end
 
@@ -22,7 +19,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _repository = [[PSKRepository alloc]init];
 }
 
 #pragma mark <UICollectionViewDataSource>

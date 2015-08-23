@@ -11,6 +11,7 @@
 @interface PSKDataController ()
 
 @property (nonatomic, strong) NSString *plistPath;
+@property (nonatomic, strong) NSMutableArray* listOfItems;
 
 @end
 
@@ -19,7 +20,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSAllDomainsMask, YES);
         NSString *documentsPath = [paths objectAtIndex:0];
         _plistPath = [documentsPath stringByAppendingString:@"DictionaryOfItems.plist"];
     }
@@ -28,21 +29,27 @@
 
 #pragma mark - get instans in array
 
-- (NSArray*)readItemsFromPlist {
+- (NSMutableArray*)readItemsFromPlist {
     if (![[NSFileManager defaultManager] fileExistsAtPath:_plistPath]) {
         _plistPath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
     }
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:_plistPath];
     NSError *error = nil;
     NSPropertyListFormat format;
-    return (NSArray *)[NSPropertyListSerialization propertyListWithData:plistXML options:NSPropertyListMutableContainersAndLeaves format:&format error:&error];
+    _listOfItems = (NSMutableArray *)[NSPropertyListSerialization propertyListWithData:plistXML options:NSPropertyListMutableContainersAndLeaves format:&format error:&error];
+    return _listOfItems;
 }
 
 #pragma mark - save item in plist
 
 - (void)writeItemToPlist:(NSString *)name pathImage:(NSString *)path {
-    NSDictionary *item = @{@"namePicture" : name, @"pathPicture" : path};
-    [item writeToFile:_plistPath atomically:YES];
+    NSMutableDictionary *item =[[NSMutableDictionary alloc]init];
+    [item setObject:path forKey:@"pathPicture"];
+    [item setObject:name forKey:@"namePicture"];
+    [_listOfItems addObject:item];
+     NSError *error = nil;
+    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListWriteInvalidError error:&error];
+    [plistData writeToFile:_plistPath atomically:YES];
 }
 
 @end

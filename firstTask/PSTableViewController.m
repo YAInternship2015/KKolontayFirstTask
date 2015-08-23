@@ -12,7 +12,7 @@
 
 @interface PSTableViewController ()
 
-@property (nonatomic, strong) PSKRepository *repository;
+
 
 @end
 
@@ -20,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _repository = [[PSKRepository alloc]init];
+    if (!_repository) {
+        _repository = [[PSKRepository alloc]init];
+    }
 }
 
 #pragma mark - Table view data source

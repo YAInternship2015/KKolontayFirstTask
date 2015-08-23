@@ -7,13 +7,11 @@
 //
 
 #import "PSKRepository.h"
-#import "PSKDataController.h"
 
 
 @interface PSKRepository ()
 
 @property (nonatomic, strong) NSMutableArray *listOfPictures;
-@property (nonatomic, strong, readonly) PSKDataController *data;
 
 @end
 
