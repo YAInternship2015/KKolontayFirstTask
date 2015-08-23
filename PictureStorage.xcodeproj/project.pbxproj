@@ -24,6 +24,7 @@
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
 		EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EECCC2411B74EC53008AABB7 /* PSKRepository.m */; };
+		EED4E4B01B887F480087FDA0 /* PSKDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED4E4AF1B887F480087FDA0 /* PSKDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
 		EECCC2401B74EC53008AABB7 /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
 		EECCC2411B74EC53008AABB7 /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
+		EED4E4AE1B887F480087FDA0 /* PSKDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKDataController.h; sourceTree = "<group>"; };
+		EED4E4AF1B887F480087FDA0 /* PSKDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE24662C1B87A93F005D09C5 /* Data */ = {
+		EE24662C1B87A93F005D09C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */,
+				EED4E4AE1B887F480087FDA0 /* PSKDataController.h */,
+				EED4E4AF1B887F480087FDA0 /* PSKDataController.m */,
 			);
-			name = Data;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		EE4AC7101B7719D9007E900D /* View */ = {
@@ -137,7 +141,7 @@
 		EEAAADE01B6C0E1F00EB9BD8 /* PictureStorage */ = {
 			isa = PBXGroup;
 			children = (
-				EE24662C1B87A93F005D09C5 /* Data */,
+				EE24662C1B87A93F005D09C5 /* Controller */,
 				EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */,
 				EE4AC7101B7719D9007E900D /* View */,
 				EECCC23F1B74EBC7008AABB7 /* Model */,
@@ -184,6 +188,7 @@
 		EECCC23F1B74EBC7008AABB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */,
 				EECCC2401B74EC53008AABB7 /* PSKRepository.h */,
 				EECCC2411B74EC53008AABB7 /* PSKRepository.m */,
 				EE4AC70D1B770677007E900D /* PSKItem.h */,
@@ -297,6 +302,7 @@
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
 				EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */,
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
+				EED4E4B01B887F480087FDA0 /* PSKDataController.m in Sources */,
 				EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,

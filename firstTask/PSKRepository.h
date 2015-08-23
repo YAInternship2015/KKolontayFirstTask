@@ -14,5 +14,6 @@
 
 - (PSKItem *)itemAtIndex:(NSInteger)index;
 - (NSInteger)countOfItems;
+- (void)load;
 
 @end

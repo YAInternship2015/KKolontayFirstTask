@@ -6,7 +6,7 @@
 		<key>namePicture</key>
 		<string>bogliasco</string>
 		<key>pathPicture</key>
-		<string>boglisco.png</string>
+		<string>bogliasco.png</string>
 	</dict>
 	<dict>
 		<key>namePicture</key>
@@ -49,6 +49,8 @@
 		<string>TajMahal</string>
 		<key>pathPicture</key>
 		<string>TajMahal.png</string>
+		<key>New item</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>namePicture</key>

@@ -12,7 +12,12 @@
 
 @property (nonatomic,weak) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIImage *choosenImage;
+@property (weak, nonatomic) IBOutlet UILabel *labelTextField;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+- (IBAction)pressOK:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *pressCancel;
+- (IBAction)enterEnded:(id)sender;
 
 @end
 
@@ -35,6 +40,8 @@
     _choosenImage = info[UIImagePickerControllerOriginalImage];
     [self.imageView setImage:_choosenImage];
     [self dismissViewControllerAnimated:YES completion:nil];
+    NSURL *urlFile = [info objectForKey:UIImagePickerControllerReferenceURL];
+    _nameField.text = [[urlFile path] lastPathComponent] ;
 }
 
 #pragma mark - cansel selected image
@@ -43,4 +50,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)pressOK:(id)sender {
+}
+- (IBAction)enterEnded:(id)sender {
+}
 @end
