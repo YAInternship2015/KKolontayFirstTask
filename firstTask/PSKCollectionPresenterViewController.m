@@ -9,10 +9,6 @@
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
 
-@interface PSKCollectionPresenterViewController ()
-
-@end
-
 @implementation PSKCollectionPresenterViewController
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -27,9 +23,13 @@ static NSString * const reuseIdentifier = @"Cell";
     return 1;
 }
 
+#pragma mark - coutn of cells in table
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _repository.countOfItems;
 }
+
+#pragma  mark - configure cells of table
 
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];

@@ -8,7 +8,6 @@
 
 #import "PSKRepository.h"
 
-
 @interface PSKRepository ()
 
 @property (nonatomic, strong) NSMutableArray *listOfPictures;
@@ -16,7 +15,6 @@
 @end
 
 @implementation PSKRepository
-
 
 #pragma mark - Initialization item and set values
 

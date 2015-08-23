@@ -10,12 +10,6 @@
 #import "PSKRepository.h"
 #import "PSKCustomCell.h"
 
-@interface PSTableViewController ()
-
-
-
-@end
-
 @implementation PSTableViewController
 
 - (void)viewDidLoad {
@@ -39,6 +33,7 @@
 }
 
 #pragma mark - Cell review
+
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];

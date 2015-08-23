@@ -20,7 +20,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSAllDomainsMask, YES);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsPath = [paths objectAtIndex:0];
         _plistPath = [documentsPath stringByAppendingString:@"DictionaryOfItems.plist"];
     }
@@ -47,8 +47,8 @@
     [item setObject:path forKey:@"pathPicture"];
     [item setObject:name forKey:@"namePicture"];
     [_listOfItems addObject:item];
-     NSError *error = nil;
-    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListWriteInvalidError error:&error];
+    NSError *error = nil;
+   NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
     [plistData writeToFile:_plistPath atomically:YES];
 }
 
