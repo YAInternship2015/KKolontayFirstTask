@@ -12,4 +12,5 @@
 @interface PSKItemCollectionViewCell : UICollectionViewCell
 
 - (void)setupWithItem:(PSKItem *)item;
+
 @end

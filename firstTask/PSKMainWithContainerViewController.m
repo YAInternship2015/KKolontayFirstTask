@@ -11,8 +11,8 @@
 
 @interface PSKMainWithContainerViewController ()
 
-@property (weak, nonatomic) PSKContainerViewController *containerViewControllers;
-
+@property (nonatomic, weak) PSKContainerViewController *containerViewControllers;
+@property (nonatomic, strong) NSString * stringSegueStoryboard;
 - (IBAction)addItem:(id)sender;
 - (IBAction)changeView:(id)sender;
 
@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _stringSegueStoryboard = @"collectionItems";
 }
 
 #pragma mark - load main view
@@ -41,7 +42,14 @@
 #pragma  mark - switch to collection view controller
 
 - (IBAction)changeView:(id)sender {
-    [_containerViewControllers swapViewControllers:@"collectionItems"];
+    if ([_stringSegueStoryboard isEqualToString:@"collectionItems"]) {
+        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
+        _stringSegueStoryboard = @"tableItems";
+    }
+    else {
+        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
+        _stringSegueStoryboard = @"collectionItems";
+    }
 }
 
 @end

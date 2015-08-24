@@ -12,11 +12,11 @@
 
 #pragma mark - Initialization cell for table
 
-- (id)initWithString:(NSString *)name {
+- (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path {
     self = [super init];
     if (self) {
         _name = name;
-        _image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _name]];
+        _image = [UIImage imageNamed:path];
     }
     return self;
 }

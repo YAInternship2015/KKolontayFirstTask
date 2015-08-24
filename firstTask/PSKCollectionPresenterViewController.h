@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSKRepository.h"
 
 @interface PSKCollectionPresenterViewController : UICollectionViewController
+
+@property (nonatomic, strong) PSKRepository *repository;
 
 @end

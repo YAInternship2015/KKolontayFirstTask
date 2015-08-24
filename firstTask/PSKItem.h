@@ -14,6 +14,6 @@
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) UIImage *image;
 
-- (id)initWithString:(NSString *)name;
+- (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path;
 
 @end
