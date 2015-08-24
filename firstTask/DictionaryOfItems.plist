@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>namePicture</key>
+		<string>bogliasco</string>
+		<key>pathPicture</key>
+		<string>bogliasco.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>inIsrael</string>
+		<key>pathPicture</key>
+		<string>inIsrael.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>ladies</string>
+		<key>pathPicture</key>
+		<string>ladies.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>mountains</string>
+		<key>pathPicture</key>
+		<string>mountains.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>paradise</string>
+		<key>pathPicture</key>
+		<string>paradise.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>sunbathing</string>
+		<key>pathPicture</key>
+		<string>sunbathing.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>sunrise</string>
+		<key>pathPicture</key>
+		<string>sunrise.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>TajMahal</string>
+		<key>pathPicture</key>
+		<string>TajMahal.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>underwater</string>
+		<key>pathPicture</key>
+		<string>underwater.png</string>
+	</dict>
+	<dict>
+		<key>namePicture</key>
+		<string>young</string>
+		<key>pathPicture</key>
+		<string>young.png</string>
+	</dict>
+</array>
+</plist>

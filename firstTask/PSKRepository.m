@@ -10,25 +10,20 @@
 
 @interface PSKRepository ()
 
-@property(nonatomic, strong) NSMutableArray *listOfPictures;
-@property(nonatomic, strong) NSArray *namePictures;
+@property (nonatomic, strong) NSMutableArray *listOfPictures;
 
 @end
 
 @implementation PSKRepository
 
-
 #pragma mark - Initialization item and set values
 
 - (id)init {
     self = [super init];
-    if (self != nil) {
-        _namePictures = @[@"bogliasco", @"inIsrael", @"ladies", @"mountains", @"paradise", @"sunbathing", @"sunrise", @"TajMahal", @"underwater", @"young"];
-        _listOfPictures = [[NSMutableArray alloc] init];
-        for (int i = 0; i < _namePictures.count; i++) {
-            [_listOfPictures addObject:[[PSKItem alloc] initWithString:[_namePictures objectAtIndex:i]]];
-        }
-    }
+    if (self) {
+        _data = [[PSKDataController alloc] init];
+        [self load];
+           }
     return self;
 }
 
@@ -41,7 +36,20 @@
 #pragma mark - Get count of images
 
 - (NSInteger)countOfItems {
-    return [_namePictures count];
+    return [_listOfPictures count];
+}
+
+#pragma mark - load to memmory
+
+-(void)load {
+    NSArray *items = [_data readItemsFromPlist];
+    _listOfPictures = [[NSMutableArray alloc] init];
+    for (int i = 0; i < items.count; i++) {
+        NSDictionary *temp = [items objectAtIndex:i];
+        NSString *name = [temp objectForKey:@"namePicture"];
+        NSString *path = [temp objectForKey:@"pathPicture"];
+        [_listOfPictures addObject:[[PSKItem alloc] initWithNameAndPicture:name picture:path]];
+    }
 }
 
 @end

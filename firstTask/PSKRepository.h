@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "PSKItem.h"
+#import "PSKDataController.h"
 
 @interface PSKRepository : NSObject
 
+@property (nonatomic, strong) PSKDataController *data;
 - (PSKItem *)itemAtIndex:(NSInteger)index;
 - (NSInteger)countOfItems;
+- (void)load;
 
 @end

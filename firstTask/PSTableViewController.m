@@ -10,17 +10,13 @@
 #import "PSKRepository.h"
 #import "PSKCustomCell.h"
 
-@interface PSTableViewController ()
-
-@property (nonatomic, strong) PSKRepository *repository;
-
-@end
-
 @implementation PSTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _repository = [[PSKRepository alloc]init];
+    if (!_repository) {
+        _repository = [[PSKRepository alloc]init];
+    }
 }
 
 #pragma mark - Table view data source
@@ -37,6 +33,7 @@
 }
 
 #pragma mark - Cell review
+
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
