@@ -14,9 +14,9 @@
 @interface PSKContainerViewController ()
 
 @property (nonatomic, strong) NSString *currentSegueIdentifier;
-@property (nonatomic, weak) PSTableViewController *tableViewController;
-@property (nonatomic, weak) PSKCollectionPresenterViewController *collectionPresenterController;
-@property (nonatomic, weak) PSKAddItemViewController *addItemController;
+@property (nonatomic, strong) PSTableViewController *tableViewController;
+@property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
+@property (nonatomic, strong) PSKAddItemViewController *addItemController;
 
 @end
 

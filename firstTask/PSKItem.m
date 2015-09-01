@@ -24,7 +24,6 @@
     self = [super init];
     if (self) {
         _name = name;
-#warning Этот кусок кода я добавил сюда, что приложение просто заработало. По уму его нужно вынести в какой-то AssetsLibraryImagesProvider. Дело в том, ссылка на картинку в бандле приложения и ссылка на картинку в галерее девайса - абсолютно разные вещи. Картинку из галереи девайса надо либо каждый раз доставать из ALAssetsLibrary, либо сохранять, например, в ту же папку Documents, и затем загружать ее по урлу оттуда
         if ([path hasPrefix:@"assets-library:"]) {
             ALAssetsLibrary *library = [ALAssetsLibrary new];
             __weak typeof(self) weakSelf = self;
@@ -34,7 +33,7 @@
                          UIImage *fullResolutionImage = [UIImage imageWithCGImage:imageRef];
                          weakSelf.image = fullResolutionImage;
                      } failureBlock:^(NSError *error) {
-                         // process error here
+                         NSLog(@"PSKItem creating error: %@", error);
                      }];
             
         } else {

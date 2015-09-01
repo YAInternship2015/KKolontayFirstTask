@@ -179,8 +179,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "-initWithNameAndPicture:picture:"
-            landmarkType = "5">
+            landmarkName = "@implementation PSKItem"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

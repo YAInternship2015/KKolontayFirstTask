@@ -31,7 +31,6 @@
 
 - (NSMutableArray*)readItemsFromPlist {
     if (![[NSFileManager defaultManager] fileExistsAtPath:_plistPath]) {
-#warning здесь после проверки того, что по данному пути файла еще нет, нужно скопировать по этому пути оригинальный plist из бандла приложения. Иначе получалось, что Вы записывали новые данные прямо в тот файл из бандла, который при каждом запуске такой же, каким он затянут в проект
         NSString *plistFromBundlePath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
         NSError *copyPlistToDocumentsDirError;
         if (![[NSFileManager defaultManager] copyItemAtPath:plistFromBundlePath
@@ -51,13 +50,14 @@
 
 - (void)writeItemToPlist:(NSString *)name pathImage:(NSString *)path {
     NSMutableDictionary *item =[[NSMutableDictionary alloc]init];
-#warning здесь приложение падает, если попытаться создать новый айтем без картинки. Нужно либо не давать создавать айтем без картинки, либо переписать логику так, чтобы приложение не падало
-    [item setObject:path forKey:@"pathPicture"];
-    [item setObject:name forKey:@"namePicture"];
-    [_listOfItems addObject:item];
-    NSError *error = nil;
-   NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
-    [plistData writeToFile:_plistPath atomically:YES];
+    if (path != nil && name != nil) {
+        [item setObject:path forKey:@"pathPicture"];
+        [item setObject:name forKey:@"namePicture"];
+        [_listOfItems addObject:item];
+        NSError *error = nil;
+        NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
+        [plistData writeToFile:_plistPath atomically:YES];
+    }
 }
 
 @end
