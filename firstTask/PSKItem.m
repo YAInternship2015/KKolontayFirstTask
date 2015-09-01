@@ -7,6 +7,14 @@
 //
 
 #import "PSKItem.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
+@interface PSKItem ()
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIImage *image;
+
+@end
 
 @implementation PSKItem
 
@@ -16,7 +24,22 @@
     self = [super init];
     if (self) {
         _name = name;
-        _image = [UIImage imageNamed:path];
+#warning Этот кусок кода я добавил сюда, что приложение просто заработало. По уму его нужно вынести в какой-то AssetsLibraryImagesProvider. Дело в том, ссылка на картинку в бандле приложения и ссылка на картинку в галерее девайса - абсолютно разные вещи. Картинку из галереи девайса надо либо каждый раз доставать из ALAssetsLibrary, либо сохранять, например, в ту же папку Documents, и затем загружать ее по урлу оттуда
+        if ([path hasPrefix:@"assets-library:"]) {
+            ALAssetsLibrary *library = [ALAssetsLibrary new];
+            __weak typeof(self) weakSelf = self;
+            [library assetForURL:[NSURL URLWithString:path]
+                     resultBlock:^(ALAsset *asset) {
+                         CGImageRef imageRef = [[asset defaultRepresentation] fullResolutionImage];
+                         UIImage *fullResolutionImage = [UIImage imageWithCGImage:imageRef];
+                         weakSelf.image = fullResolutionImage;
+                     } failureBlock:^(NSError *error) {
+                         // process error here
+                     }];
+            
+        } else {
+            _image = [UIImage imageNamed:path];
+        }
     }
     return self;
 }

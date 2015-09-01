@@ -48,7 +48,11 @@
     [self.imageView setImage:_choosenImage];
     [self dismissViewControllerAnimated:YES completion:nil];
     NSURL *urlFile = [info objectForKey:UIImagePickerControllerReferenceURL];
-    _pathPicture = [urlFile path];
+    
+#warning здесь стоит сохранять полный путь к картинке, чтобы затем можно было получить ее у AssetsLibrary
+//    _pathPicture = [urlFile path];
+    _pathPicture = [urlFile absoluteString];
+    
     if ([_nameField.text isEqualToString:@""]) {
         _nameField.text = [[urlFile path] lastPathComponent];
     }

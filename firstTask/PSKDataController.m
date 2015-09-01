@@ -31,7 +31,14 @@
 
 - (NSMutableArray*)readItemsFromPlist {
     if (![[NSFileManager defaultManager] fileExistsAtPath:_plistPath]) {
-        _plistPath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
+#warning здесь после проверки того, что по данному пути файла еще нет, нужно скопировать по этому пути оригинальный plist из бандла приложения. Иначе получалось, что Вы записывали новые данные прямо в тот файл из бандла, который при каждом запуске такой же, каким он затянут в проект
+        NSString *plistFromBundlePath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
+        NSError *copyPlistToDocumentsDirError;
+        if (![[NSFileManager defaultManager] copyItemAtPath:plistFromBundlePath
+                                                     toPath:_plistPath
+                                                      error:&copyPlistToDocumentsDirError]) {
+            NSLog(@"copying error: %@", copyPlistToDocumentsDirError);
+        }
     }
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:_plistPath];
     NSError *error = nil;
@@ -44,6 +51,7 @@
 
 - (void)writeItemToPlist:(NSString *)name pathImage:(NSString *)path {
     NSMutableDictionary *item =[[NSMutableDictionary alloc]init];
+#warning здесь приложение падает, если попытаться создать новый айтем без картинки. Нужно либо не давать создавать айтем без картинки, либо переписать логику так, чтобы приложение не падало
     [item setObject:path forKey:@"pathPicture"];
     [item setObject:name forKey:@"namePicture"];
     [_listOfItems addObject:item];
