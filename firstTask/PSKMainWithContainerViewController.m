@@ -1,4 +1,4 @@
-//
+ //
 //  PSKMainWithContainerViewController.m
 //  PictureStorage
 //
@@ -8,12 +8,13 @@
 
 #import "PSKMainWithContainerViewController.h"
 #import "PSKContainerViewController.h"
+#import "PSKAddItemViewController.h"
 
 @interface PSKMainWithContainerViewController ()
 
-@property (nonatomic, weak) PSKContainerViewController *containerViewControllers;
+@property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
+@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
 @property (nonatomic, strong) NSString * stringSegueStoryboard;
-- (IBAction)addItem:(id)sender;
 - (IBAction)changeView:(id)sender;
 
 @end
@@ -30,13 +31,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
+        
     }
-}
-
-#pragma  mark - switch view to add item view controller
-
-- (IBAction)addItem:(id)sender {
-    [_containerViewControllers swapViewControllers:@"addItem"];
+    if ([segue.identifier isEqualToString:@"addItem"]) {
+        _addItemViewController = segue.destinationViewController;
+        if ([_containerViewControllers.currentSegueIdentifier isEqualToString:@"tableItems"]) {
+            _addItemViewController.delegate = _containerViewControllers.tableViewController;
+        }
+        else {
+            _addItemViewController.delegate = _containerViewControllers.collectionPresenterController;
+        }
+    }
 }
 
 #pragma  mark - switch to collection view controller

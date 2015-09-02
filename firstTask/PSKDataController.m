@@ -31,7 +31,13 @@
 
 - (NSMutableArray*)readItemsFromPlist {
     if (![[NSFileManager defaultManager] fileExistsAtPath:_plistPath]) {
-        _plistPath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
+        NSString *plistFromBundlePath = [[NSBundle mainBundle] pathForResource:@"DictionaryOfItems" ofType:@"plist"];
+        NSError *copyPlistToDocumentsDirError;
+        if (![[NSFileManager defaultManager] copyItemAtPath:plistFromBundlePath
+                                                     toPath:_plistPath
+                                                      error:&copyPlistToDocumentsDirError]) {
+            NSLog(@"copying error: %@", copyPlistToDocumentsDirError);
+        }
     }
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:_plistPath];
     NSError *error = nil;
@@ -44,12 +50,14 @@
 
 - (void)writeItemToPlist:(NSString *)name pathImage:(NSString *)path {
     NSMutableDictionary *item =[[NSMutableDictionary alloc]init];
-    [item setObject:path forKey:@"pathPicture"];
-    [item setObject:name forKey:@"namePicture"];
-    [_listOfItems addObject:item];
-    NSError *error = nil;
-   NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
-    [plistData writeToFile:_plistPath atomically:YES];
+    if (path != nil) {
+        [item setObject:path forKey:@"pathPicture"];
+        [item setObject:name forKey:@"namePicture"];
+        [_listOfItems addObject:item];
+        NSError *error = nil;
+        NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:_listOfItems format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
+        [plistData writeToFile:_plistPath atomically:YES];
+    }
 }
 
 @end

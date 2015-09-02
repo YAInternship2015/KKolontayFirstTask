@@ -7,6 +7,14 @@
 //
 
 #import "PSKItem.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
+@interface PSKItem ()
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIImage *image;
+
+@end
 
 @implementation PSKItem
 
@@ -16,7 +24,21 @@
     self = [super init];
     if (self) {
         _name = name;
-        _image = [UIImage imageNamed:path];
+        if ([path hasPrefix:@"assets-library:"]) {
+            ALAssetsLibrary *library = [ALAssetsLibrary new];
+            __weak typeof(self) weakSelf = self;
+            [library assetForURL:[NSURL URLWithString:path]
+                     resultBlock:^(ALAsset *asset) {
+                         CGImageRef imageRef = [[asset defaultRepresentation] fullResolutionImage];
+                         UIImage *fullResolutionImage = [UIImage imageWithCGImage:imageRef];
+                         weakSelf.image = fullResolutionImage;
+                     } failureBlock:^(NSError *error) {
+                         NSLog(@"PSKItem creating error: %@", error);
+                     }];
+            
+        } else {
+            _image = [UIImage imageNamed:path];
+        }
     }
     return self;
 }

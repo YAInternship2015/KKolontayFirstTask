@@ -119,6 +119,8 @@
 				EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */,
 				EE7BD0261B86762B0082B4A2 /* PSKItemCollectionViewCell.h */,
 				EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */,
+				EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */,
+				EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,8 +155,6 @@
 				EEAAADEE1B6C0E2000EB9BD8 /* Images.xcassets */,
 				EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */,
 				EEAAADE11B6C0E1F00EB9BD8 /* Supporting Files */,
-				EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */,
-				EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */,
 				EE2466291B879AD8005D09C5 /* CustomStoryboardSegue.h */,
 				EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */,
 			);

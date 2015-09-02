@@ -7,7 +7,7 @@
 //
 
 #import "PSKAddItemViewController.h"
-#import "PSTableViewController.h"
+#import "PSKDataController.h"
 #import "PSKValidator.h"
 
 @interface PSKAddItemViewController ()
@@ -15,11 +15,11 @@
 @property (nonatomic, strong) NSString *pathPicture;
 @property (nonatomic, strong) UIImage *choosenImage;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSave;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonSave;
+
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UILabel *labelTextField;
-- (IBAction)pressOK:(id)sender;
+- (IBAction)pressButtonSave:(id)sender;
 - (IBAction)enterEnded:(id)sender;
 
 @end
@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - choose image with UIImagePickerController
@@ -43,12 +44,11 @@
 #pragma mark - set image in imageView
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-   
     _choosenImage = info[UIImagePickerControllerOriginalImage];
     [self.imageView setImage:_choosenImage];
     [self dismissViewControllerAnimated:YES completion:nil];
     NSURL *urlFile = [info objectForKey:UIImagePickerControllerReferenceURL];
-    _pathPicture = [urlFile path];
+    _pathPicture = [urlFile absoluteString];
     if ([_nameField.text isEqualToString:@""]) {
         _nameField.text = [[urlFile path] lastPathComponent];
     }
@@ -62,18 +62,19 @@
 
 #pragma mark - press button OK
 
-- (IBAction)pressOK:(id)sender {
+- (IBAction)pressButtonSave:(id)sender {
     NSError *error;
-    if ([PSKValidator isValidModelTitle:_nameField.text error:&error]) {
-        [_repository.data writeItemToPlist:[_nameField text] pathImage:_pathPicture];
-        [_repository load];
+    if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
+        PSKDataController *addItemToFile = [[PSKDataController alloc]init];
+        [addItemToFile readItemsFromPlist];
+        [addItemToFile writeItemToPlist:[_nameField text] pathImage:_pathPicture];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataFileContentDidChange" object:self];
+        [self.delegate dataWasChanged];
         [_buttonSave setEnabled:NO];
     }
     else {
         [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil]show];
     }
-    
-    
 }
 
 #pragma mark - press button Cancel

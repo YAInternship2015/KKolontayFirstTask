@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PSKRepository.h"
+#import "PSKAddItemViewController.h"
 
-@interface PSKCollectionPresenterViewController : UICollectionViewController
+@interface PSKCollectionPresenterViewController : UICollectionViewController <ModelsDataSourceDelegate>
 
 @property (nonatomic, strong) PSKRepository *repository;
 

@@ -16,6 +16,12 @@
 
 @implementation PSKRepository
 
+# pragma mark - delete notification
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Initialization item and set values
 
 - (id)init {
@@ -23,6 +29,7 @@
     if (self) {
         _data = [[PSKDataController alloc] init];
         [self load];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(load) name:@"DataFileContentDidChange" object:nil];
            }
     return self;
 }
