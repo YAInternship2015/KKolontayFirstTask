@@ -50,7 +50,7 @@
 
 - (void)writeItemToPlist:(NSString *)name pathImage:(NSString *)path {
     NSMutableDictionary *item =[[NSMutableDictionary alloc]init];
-    if (path != nil && name != nil) {
+    if (path != nil) {
         [item setObject:path forKey:@"pathPicture"];
         [item setObject:name forKey:@"namePicture"];
         [_listOfItems addObject:item];

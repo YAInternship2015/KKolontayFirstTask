@@ -15,11 +15,11 @@
 @property (nonatomic, strong) NSString *pathPicture;
 @property (nonatomic, strong) UIImage *choosenImage;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSave;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonSave;
+
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UILabel *labelTextField;
-- (IBAction)pressOK:(id)sender;
+- (IBAction)pressButtonSave:(id)sender;
 - (IBAction)enterEnded:(id)sender;
 
 @end
@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - choose image with UIImagePickerController
@@ -61,9 +62,9 @@
 
 #pragma mark - press button OK
 
-- (IBAction)pressOK:(id)sender {
+- (IBAction)pressButtonSave:(id)sender {
     NSError *error;
-    if ([PSKValidator isValidModelTitle:_nameField.text error:&error]) {
+    if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
         [_repository.data writeItemToPlist:[_nameField text] pathImage:_pathPicture];
         [_repository load];
         [_buttonSave setEnabled:NO];
@@ -71,8 +72,6 @@
     else {
         [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil]show];
     }
-    
-    
 }
 
 #pragma mark - press button Cancel

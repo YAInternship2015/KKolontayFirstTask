@@ -13,7 +13,6 @@
 
 @property (nonatomic, weak) PSKContainerViewController *containerViewControllers;
 @property (nonatomic, strong) NSString * stringSegueStoryboard;
-- (IBAction)addItem:(id)sender;
 - (IBAction)changeView:(id)sender;
 
 @end
@@ -31,12 +30,6 @@
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
     }
-}
-
-#pragma  mark - switch view to add item view controller
-
-- (IBAction)addItem:(id)sender {
-    [_containerViewControllers swapViewControllers:@"addItem"];
 }
 
 #pragma  mark - switch to collection view controller
