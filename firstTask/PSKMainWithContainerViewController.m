@@ -1,4 +1,4 @@
-//
+ //
 //  PSKMainWithContainerViewController.m
 //  PictureStorage
 //
@@ -8,10 +8,12 @@
 
 #import "PSKMainWithContainerViewController.h"
 #import "PSKContainerViewController.h"
+#import "PSKAddItemViewController.h"
 
 @interface PSKMainWithContainerViewController ()
 
-@property (nonatomic, weak) PSKContainerViewController *containerViewControllers;
+@property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
+@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
 @property (nonatomic, strong) NSString * stringSegueStoryboard;
 - (IBAction)changeView:(id)sender;
 
@@ -29,6 +31,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
+        
+    }
+    if ([segue.identifier isEqualToString:@"addItem"]) {
+        _addItemViewController = segue.destinationViewController;
+        if ([_containerViewControllers.currentSegueIdentifier isEqualToString:@"tableItems"]) {
+            _addItemViewController.delegate = _containerViewControllers.tableViewController;
+        }
+        else {
+            _addItemViewController.delegate = _containerViewControllers.collectionPresenterController;
+        }
     }
 }
 

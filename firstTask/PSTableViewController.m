@@ -41,4 +41,10 @@
     return cell;
 }
 
+#pragma mark - renew talbe 
+
+-(void)dataWasChanged {
+    [self.tableView reloadData];
+}
+
 @end

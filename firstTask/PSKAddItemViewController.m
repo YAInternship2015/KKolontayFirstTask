@@ -7,7 +7,7 @@
 //
 
 #import "PSKAddItemViewController.h"
-#import "PSTableViewController.h"
+#import "PSKDataController.h"
 #import "PSKValidator.h"
 
 @interface PSKAddItemViewController ()
@@ -65,8 +65,11 @@
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
     if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
-        [_repository.data writeItemToPlist:[_nameField text] pathImage:_pathPicture];
-        [_repository load];
+        PSKDataController *addItemToFile = [[PSKDataController alloc]init];
+        [addItemToFile readItemsFromPlist];
+        [addItemToFile writeItemToPlist:[_nameField text] pathImage:_pathPicture];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataFileContentDidChange" object:self];
+        [self.delegate dataWasChanged];
         [_buttonSave setEnabled:NO];
     }
     else {

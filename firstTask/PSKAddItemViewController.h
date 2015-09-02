@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "PSKRepository.h"
 
+@protocol ModelsDataSourceDelegate <NSObject>
+
+- (void)dataWasChanged;
+
+@end
+
 @interface PSKAddItemViewController : UIViewController <
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
 >
 
-@property (nonatomic, strong) PSKRepository *repository;
+@property (nonatomic, weak) id <ModelsDataSourceDelegate> delegate;
 
 @end

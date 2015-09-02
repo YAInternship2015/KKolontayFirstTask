@@ -38,4 +38,10 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+#pragma mark - renew collection
+
+-(void)dataWasChanged {
+    [self.collectionView reloadData];
+}
+
 @end
