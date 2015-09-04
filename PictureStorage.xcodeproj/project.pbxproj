@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9254D9D34590344AE4B58F39 /* libPods-PictureStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A67EA4B4C25E69CD32E7ED2 /* libPods-PictureStorage.a */; };
 		EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */; };
 		EE24662E1B87A998005D09C5 /* DictionaryOfItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */; };
 		EE2E8AD31B84F1BC00B73F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */; };
@@ -39,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A67EA4B4C25E69CD32E7ED2 /* libPods-PictureStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PictureStorage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880CF6B459EDC0B8FFBB86C4 /* Pods-PictureStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureStorage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureStorage/Pods-PictureStorage.debug.xcconfig"; sourceTree = "<group>"; };
+		B6C92C59B2D0035121617D32 /* Pods-PictureStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureStorage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureStorage/Pods-PictureStorage.release.xcconfig"; sourceTree = "<group>"; };
 		EE2466291B879AD8005D09C5 /* CustomStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomStoryboardSegue.h; sourceTree = "<group>"; };
 		EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStoryboardSegue.m; sourceTree = "<group>"; };
 		EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DictionaryOfItems.plist; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9254D9D34590344AE4B58F39 /* libPods-PictureStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D4E18151243612CE9D16129 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				880CF6B459EDC0B8FFBB86C4 /* Pods-PictureStorage.debug.xcconfig */,
+				B6C92C59B2D0035121617D32 /* Pods-PictureStorage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		77711FBA9F74ACF90413E034 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A67EA4B4C25E69CD32E7ED2 /* libPods-PictureStorage.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE24662C1B87A93F005D09C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +153,8 @@
 				EEAAADE01B6C0E1F00EB9BD8 /* PictureStorage */,
 				EEAAADFA1B6C0E2000EB9BD8 /* firstTaskTests */,
 				EEAAADDF1B6C0E1F00EB9BD8 /* Products */,
+				6D4E18151243612CE9D16129 /* Pods */,
+				77711FBA9F74ACF90413E034 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEAAAE011B6C0E2000EB9BD8 /* Build configuration list for PBXNativeTarget "PictureStorage" */;
 			buildPhases = (
+				610060CA15414D05DE4B6E6C /* Check Pods Manifest.lock */,
 				EEAAADDA1B6C0E1F00EB9BD8 /* Sources */,
 				EEAAADDB1B6C0E1F00EB9BD8 /* Frameworks */,
 				EEAAADDC1B6C0E1F00EB9BD8 /* Resources */,
+				977142AD2C259A6A40F83B4F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +323,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		610060CA15414D05DE4B6E6C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		977142AD2C259A6A40F83B4F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictureStorage/Pods-PictureStorage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEAAADDA1B6C0E1F00EB9BD8 /* Sources */ = {
@@ -442,6 +501,7 @@
 		};
 		EEAAAE021B6C0E2000EB9BD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 880CF6B459EDC0B8FFBB86C4 /* Pods-PictureStorage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
@@ -452,6 +512,7 @@
 		};
 		EEAAAE031B6C0E2000EB9BD8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6C92C59B2D0035121617D32 /* Pods-PictureStorage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
