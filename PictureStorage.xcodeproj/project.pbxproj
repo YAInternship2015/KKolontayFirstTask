@@ -27,6 +27,8 @@
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
 		EECCC2421B74EC53008AABB7 /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EECCC2411B74EC53008AABB7 /* PSKRepository.m */; };
 		EED4E4B01B887F480087FDA0 /* PSKDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED4E4AF1B887F480087FDA0 /* PSKDataController.m */; };
+		EEF20AB31B9B12FB005F97D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF20AB21B9B12FB005F97D7 /* CoreData.framework */; };
+		EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		EECCC2411B74EC53008AABB7 /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
 		EED4E4AE1B887F480087FDA0 /* PSKDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKDataController.h; sourceTree = "<group>"; };
 		EED4E4AF1B887F480087FDA0 /* PSKDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKDataController.m; sourceTree = "<group>"; };
+		EEF20AB21B9B12FB005F97D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPictureStorage.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF20AB31B9B12FB005F97D7 /* CoreData.framework in Frameworks */,
 				9254D9D34590344AE4B58F39 /* libPods-PictureStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +117,7 @@
 		77711FBA9F74ACF90413E034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEF20AB21B9B12FB005F97D7 /* CoreData.framework */,
 				6A67EA4B4C25E69CD32E7ED2 /* libPods-PictureStorage.a */,
 			);
 			name = Frameworks;
@@ -215,6 +221,7 @@
 		EECCC23F1B74EBC7008AABB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */,
 				EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */,
 				EECCC2401B74EC53008AABB7 /* PSKRepository.h */,
 				EECCC2411B74EC53008AABB7 /* PSKRepository.m */,
@@ -367,6 +374,7 @@
 				EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */,
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
 				EED4E4B01B887F480087FDA0 /* PSKDataController.m in Sources */,
+				EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */,
 				EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
@@ -586,6 +594,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */,
+			);
+			currentVersion = EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */;
+			name = ModelPictureStorage.xcdatamodeld;
+			path = ../ModelPictureStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEAAADD61B6C0E1F00EB9BD8 /* Project object */;
 }

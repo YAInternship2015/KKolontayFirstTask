@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UIImage *choosenImage;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonSave;
-
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 - (IBAction)pressButtonSave:(id)sender;
