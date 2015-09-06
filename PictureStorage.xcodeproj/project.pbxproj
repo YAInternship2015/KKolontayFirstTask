@@ -82,7 +82,6 @@
 		EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstTaskTests.m; sourceTree = "<group>"; };
 		EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewController.h; sourceTree = "<group>"; };
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
-		EECCC2401B74EC53008AABB7 /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
 		EECCC2411B74EC53008AABB7 /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
 		EED4E4AE1B887F480087FDA0 /* PSKDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKDataController.h; sourceTree = "<group>"; };
 		EED4E4AF1B887F480087FDA0 /* PSKDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKDataController.m; sourceTree = "<group>"; };
@@ -240,7 +239,6 @@
 				EE8C9F251B9B5419002F7AF9 /* ClassDataModel */,
 				EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */,
 				EE24662D1B87A998005D09C5 /* DictionaryOfItems.plist */,
-				EECCC2401B74EC53008AABB7 /* PSKRepository.h */,
 				EECCC2411B74EC53008AABB7 /* PSKRepository.m */,
 				EE4AC70D1B770677007E900D /* PSKItem.h */,
 				EE4AC70E1B770677007E900D /* PSKItem.m */,
