@@ -9,14 +9,23 @@
 #import "PSTableViewController.h"
 #import "PSKRepository.h"
 #import "PSKCustomCell.h"
+#import "MagicalRecord/MagicalRecord.h"
+#import "ItemsOfPicture.h"
+
+@interface PSTableViewController ()
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@end
 
 @implementation PSTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (!_repository) {
+    /*if (!_repository) {
         _repository = [[PSKRepository alloc]init];
-    }
+    }*/
+    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
 }
 
 #pragma mark - Table view data source
@@ -27,9 +36,9 @@
 
 #pragma mark - Namber of rows
 
-- (NSInteger)tableView:(UITableView *)tableView
-                        numberOfRowsInSection:(NSInteger)section {
-    return[_repository countOfItems];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    id sectionInfo = [[self.fetchedResultsController sections]objectAtIndex:section];
+    return[sectionInfo numberOfObjects];
 }
 
 #pragma mark - Cell review
