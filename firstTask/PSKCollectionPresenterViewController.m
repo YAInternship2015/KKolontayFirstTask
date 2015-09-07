@@ -8,6 +8,15 @@
 
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
+#import "MagicalRecord/MagicalRecord.h"
+#import "ItemsOfPicture.h"
+
+@interface PSKCollectionPresenterViewController ()
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSArray *items;
+
+@end
 
 @implementation PSKCollectionPresenterViewController
 
@@ -15,6 +24,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [ItemsOfPicture MR_findAll];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -26,15 +37,17 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - coutn of cells in table
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _repository.countOfItems;
+    id sectionInfo = [[self.fetchedResultsController sections]objectAtIndex:section];
+    return[sectionInfo numberOfObjects];
 }
 
 #pragma  mark - configure cells of table
 
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    PSKItem *item = [_repository itemAtIndex:[indexPath row]];
-    [cell setupWithItem:item];
+    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
+    [cell setupWithItem:memberOfCell];
     return cell;
 }
 

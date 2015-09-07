@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "PSKRepository.h"
 
 @interface AppDelegate ()
 

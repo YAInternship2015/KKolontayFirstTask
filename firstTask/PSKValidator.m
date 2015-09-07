@@ -22,6 +22,18 @@
                                     };
         *error = [NSError errorWithDomain:NSURLErrorDomain code:-57 userInfo:userInfo];
     }
+    if (title == nil) {
+        return true;
+    }
+    else {
+        NSDictionary * userInfo = @{
+                                    NSLocalizedDescriptionKey: NSLocalizedString(@"Operation was unsuccessful.", nil),
+                                    NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"Please, select picture", nil),
+                                    NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString(@"Please, select picture", nil)
+                                    };
+        *error = [NSError errorWithDomain:NSURLErrorDomain code:-57 userInfo:userInfo];
+    }
+
     return false;
 }
 @end

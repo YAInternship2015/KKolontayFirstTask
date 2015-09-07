@@ -40,14 +40,14 @@
 #pragma mark - swap from view controller to another view controller
 
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
-    if ([fromViewController isKindOfClass:[PSTableViewController class]] && [toViewController isKindOfClass:[PSKCollectionPresenterViewController class]]) {
+   /* if ([fromViewController isKindOfClass:[PSTableViewController class]] && [toViewController isKindOfClass:[PSKCollectionPresenterViewController class]]) {
        ((PSKCollectionPresenterViewController *)toViewController).repository = ((PSTableViewController *)fromViewController).repository;
       //  ((PSKCollectionPresenterViewController *)toViewController).repository.delegate = (PSTableViewController *)fromViewController;
     }
     if ([fromViewController isKindOfClass:[PSKCollectionPresenterViewController class]] && [toViewController isKindOfClass:[PSTableViewController class]]) {
         ((PSTableViewController *)toViewController).repository = ((PSKCollectionPresenterViewController *)fromViewController).repository;
        // ((PSTableViewController *)toViewController).repository.delegate = (PSKCollectionPresenterViewController *)fromViewController;
-    }
+    }*/
     [self addChildViewController:toViewController];
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [fromViewController willMoveToParentViewController:nil];

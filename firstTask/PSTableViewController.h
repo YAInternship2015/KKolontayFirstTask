@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKRepository.h"
 #import "PSKAddItemViewController.h"
 #import <CoreData/CoreData.h>
 
@@ -15,7 +14,5 @@
     ModelsDataSourceDelegate,
     NSFetchedResultsControllerDelegate
 >
-
-//@property (nonatomic, strong) PSKRepository *repository;
 
 @end

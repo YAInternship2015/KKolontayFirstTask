@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKRepository.h"
 
 @protocol ModelsDataSourceDelegate <NSObject>
 

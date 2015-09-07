@@ -7,7 +7,6 @@
 //
 
 #import "PSKAddItemViewController.h"
-#import "PSKDataController.h"
 #import "PSKValidator.h"
 #import "MagicalRecord/MagicalRecord.h"
 //#import <CoreData/CoreData.h>

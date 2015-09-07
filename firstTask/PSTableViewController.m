@@ -7,14 +7,15 @@
 //
 
 #import "PSTableViewController.h"
-#import "PSKRepository.h"
 #import "PSKCustomCell.h"
 #import "MagicalRecord/MagicalRecord.h"
 #import "ItemsOfPicture.h"
+#import "PSKItem.h"
 
 @interface PSTableViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSArray *items;
 
 @end
 
@@ -26,6 +27,7 @@
         _repository = [[PSKRepository alloc]init];
     }*/
     self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [ItemsOfPicture MR_findAll];
 }
 
 #pragma mark - Table view data source
@@ -45,8 +47,10 @@
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
-    [cell setupWithItem:[_repository itemAtIndex:indexPath.row]];
+    PSKItem *memeberCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
+    [cell setupWithItem:memeberCell];
     return cell;
 }
 

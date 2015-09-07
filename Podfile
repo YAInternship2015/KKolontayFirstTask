@@ -3,7 +3,7 @@
 
 target 'PictureStorage' do
 
-pod 'MagicalRecord', '2.3'
+pod 'MagicalRecord'
 
 end
 
