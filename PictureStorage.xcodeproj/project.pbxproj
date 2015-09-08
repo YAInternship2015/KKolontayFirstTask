@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77B91F9C12F081018281AAC9 /* libPods-PictureStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68EF4BC4E56098A87F9FACE /* libPods-PictureStorage.a */; };
 		EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */; };
 		EE2E8AD31B84F1BC00B73F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */; };
 		EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B081B84723800402816 /* PSKContainerViewController.m */; };
@@ -18,7 +19,6 @@
 		EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */; };
 		EE8C9F281B9B5483002F7AF9 /* ItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */; };
 		EE9188171B8A694600B842FF /* PSKValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9188161B8A694600B842FF /* PSKValidator.m */; };
-		EEA1EF261B9EC0CC00064AC3 /* libPods-PictureStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA1EF251B9EC0CC00064AC3 /* libPods-PictureStorage.a */; };
 		EEA1EF271B9EC4A000064AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893011B9EBE8500E61975 /* Foundation.framework */; };
 		EEA1EF281B9EC4AD00064AC3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF20AB21B9B12FB005F97D7 /* CoreData.framework */; };
 		EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADE31B6C0E2000EB9BD8 /* main.m */; };
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		880CF6B459EDC0B8FFBB86C4 /* Pods-PictureStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureStorage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureStorage/Pods-PictureStorage.debug.xcconfig"; sourceTree = "<group>"; };
+		B68EF4BC4E56098A87F9FACE /* libPods-PictureStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PictureStorage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C92C59B2D0035121617D32 /* Pods-PictureStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureStorage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureStorage/Pods-PictureStorage.release.xcconfig"; sourceTree = "<group>"; };
 		EE2466291B879AD8005D09C5 /* CustomStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomStoryboardSegue.h; sourceTree = "<group>"; };
 		EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStoryboardSegue.m; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsOfPicture.m; sourceTree = "<group>"; };
 		EE9188151B8A694600B842FF /* PSKValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKValidator.h; sourceTree = "<group>"; };
 		EE9188161B8A694600B842FF /* PSKValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKValidator.m; sourceTree = "<group>"; };
-		EEA1EF251B9EC0CC00064AC3 /* libPods-PictureStorage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PictureStorage.a"; path = "Pods/../build/Debug-iphoneos/libPods-PictureStorage.a"; sourceTree = "<group>"; };
 		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAAADE21B6C0E2000EB9BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAAADE31B6C0E2000EB9BD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			files = (
 				EEA1EF281B9EC4AD00064AC3 /* CoreData.framework in Frameworks */,
 				EEA1EF271B9EC4A000064AC3 /* Foundation.framework in Frameworks */,
-				EEA1EF261B9EC0CC00064AC3 /* libPods-PictureStorage.a in Frameworks */,
+				77B91F9C12F081018281AAC9 /* libPods-PictureStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +115,9 @@
 		77711FBA9F74ACF90413E034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEA1EF251B9EC0CC00064AC3 /* libPods-PictureStorage.a */,
 				EE7893011B9EBE8500E61975 /* Foundation.framework */,
 				EEF20AB21B9B12FB005F97D7 /* CoreData.framework */,
+				B68EF4BC4E56098A87F9FACE /* libPods-PictureStorage.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -508,6 +508,7 @@
 			baseConfigurationReference = 880CF6B459EDC0B8FFBB86C4 /* Pods-PictureStorage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -521,6 +522,7 @@
 			baseConfigurationReference = B6C92C59B2D0035121617D32 /* Pods-PictureStorage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
