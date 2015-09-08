@@ -23,9 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /*if (!_repository) {
-        _repository = [[PSKRepository alloc]init];
-    }*/
     self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
     self.items = [ItemsOfPicture MR_findAll];
 }
@@ -56,8 +53,9 @@
 
 #pragma mark - renew talbe 
 
--(void)dataWasChanged {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
+    [self viewDidLoad];
 }
 
 @end

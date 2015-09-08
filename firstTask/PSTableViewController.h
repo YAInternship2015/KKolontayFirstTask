@@ -11,7 +11,6 @@
 #import <CoreData/CoreData.h>
 
 @interface PSTableViewController : UITableViewController <
-    ModelsDataSourceDelegate,
     NSFetchedResultsControllerDelegate
 >
 

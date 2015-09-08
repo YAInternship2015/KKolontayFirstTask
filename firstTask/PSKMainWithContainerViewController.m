@@ -33,7 +33,7 @@
         _containerViewControllers = segue.destinationViewController;
         
     }
-    if ([segue.identifier isEqualToString:@"addItem"]) {
+   /* if ([segue.identifier isEqualToString:@"addItem"]) {
         _addItemViewController = segue.destinationViewController;
         if ([_containerViewControllers.currentSegueIdentifier isEqualToString:@"tableItems"]) {
             _addItemViewController.delegate = _containerViewControllers.tableViewController;
@@ -41,7 +41,7 @@
         else {
             _addItemViewController.delegate = _containerViewControllers.collectionPresenterController;
         }
-    }
+    }*/
 }
 
 #pragma  mark - switch to collection view controller
