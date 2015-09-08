@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACCB4DC4CDD362C23FB2D52A /* libPods-PictureStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A67EA4B4C25E69CD32E7ED2 /* libPods-PictureStorage.a */; };
 		EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EE24662A1B879AD8005D09C5 /* CustomStoryboardSegue.m */; };
 		EE2E8AD31B84F1BC00B73F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2E8AD11B84F1BC00B73F6C /* Main.storyboard */; };
 		EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B081B84723800402816 /* PSKContainerViewController.m */; };
@@ -87,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF20AB31B9B12FB005F97D7 /* CoreData.framework in Frameworks */,
+				ACCB4DC4CDD362C23FB2D52A /* libPods-PictureStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firstTask/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
