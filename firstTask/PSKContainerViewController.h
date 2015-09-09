@@ -15,7 +15,6 @@
 @property (nonatomic, strong) PSTableViewController *tableViewController;
 @property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
 @property (nonatomic, strong) NSString *currentSegueIdentifier;
-
 - (void)swapViewControllers:(NSString *) segueIdentifier;
 
 @end

@@ -12,7 +12,7 @@
 
 @interface ItemsOfPicture : NSManagedObject
 
-@property (nonatomic, retain) NSString * namePicture;
-@property (nonatomic, retain) NSString * pathPicture;
+@property (nonatomic, retain) NSString *namePicture;
+@property (nonatomic, retain) NSString *pathPicture;
 
 @end

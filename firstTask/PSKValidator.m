@@ -10,7 +10,8 @@
 
 @implementation PSKValidator
 
-+ (BOOL)isValidModelTitle:(NSString *)title error:(NSError **)error {
++ (BOOL)isValidModelTitle:(NSString *)title
+                    error:(NSError **)error {
     if (title.length > 3) {
         return true;
     }
@@ -36,4 +37,5 @@
 
     return false;
 }
+
 @end

@@ -39,7 +39,8 @@
 
 #pragma mark - swap from view controller to another view controller
 
-- (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
+- (void)swapFromViewController:(UIViewController *)fromViewController
+              toViewController:(UIViewController *)toViewController {
     [self addChildViewController:toViewController];
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [fromViewController willMoveToParentViewController:nil];
@@ -55,4 +56,5 @@
     _currentSegueIdentifier = segueIdentifier;
     [self performSegueWithIdentifier:_currentSegueIdentifier sender:nil];
 }
+
 @end
