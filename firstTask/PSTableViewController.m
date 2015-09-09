@@ -7,16 +7,24 @@
 //
 
 #import "PSTableViewController.h"
-#import "PSKRepository.h"
 #import "PSKCustomCell.h"
+#import "MagicalRecord/MagicalRecord.h"
+#import "ItemsOfPicture.h"
+#import "PSKItem.h"
+
+@interface PSTableViewController ()
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSMutableArray *items;
+
+@end
 
 @implementation PSTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (!_repository) {
-        _repository = [[PSKRepository alloc]init];
-    }
+    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
 }
 
 #pragma mark - Table view data source
@@ -27,24 +35,40 @@
 
 #pragma mark - Namber of rows
 
-- (NSInteger)tableView:(UITableView *)tableView
-                        numberOfRowsInSection:(NSInteger)section {
-    return[_repository countOfItems];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return[_items count];
 }
 
 #pragma mark - Cell review
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
-    [cell setupWithItem:[_repository itemAtIndex:indexPath.row]];
+    PSKItem *memeberCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
+    [cell setupWithItem:memeberCell];
     return cell;
 }
 
 #pragma mark - renew talbe 
 
--(void)dataWasChanged {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
+    [self viewDidLoad];
+}
+
+#pragma  mark - delete row with animation 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.tableView beginUpdates];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+        [item MR_deleteEntity];
+        [_items removeObjectAtIndex:indexPath.row];
+        [self.tableView endUpdates];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    }
 }
 
 @end

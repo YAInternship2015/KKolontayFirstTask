@@ -7,8 +7,10 @@
 //
 
 #import "PSKAddItemViewController.h"
-#import "PSKDataController.h"
 #import "PSKValidator.h"
+#import "MagicalRecord/MagicalRecord.h"
+#import <CoreData/CoreData.h>
+#import "ItemsOfPicture.h"
 
 @interface PSKAddItemViewController ()
 
@@ -63,16 +65,15 @@
 
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
-    if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
-        PSKDataController *addItemToFile = [[PSKDataController alloc]init];
-        [addItemToFile readItemsFromPlist];
-        [addItemToFile writeItemToPlist:[_nameField text] pathImage:_pathPicture];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataFileContentDidChange" object:self];
-        [self.delegate dataWasChanged];
-        [_buttonSave setEnabled:NO];
+        if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
+        ItemsOfPicture *item = [ItemsOfPicture MR_createEntity];
+        item.pathPicture = _pathPicture;
+        item.namePicture = _nameField.text;
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else {
-        [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil]show];
+        [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString (@"OK", nil) otherButtonTitles:nil, nil] show];
     }
 }
 

@@ -1,9 +1,8 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '7.0'
+platform :ios, '7.0'
 
 target 'PictureStorage' do
-
-pod 'MagicalRecord', '2.3'
+pod 'MagicalRecord'
 
 end
 
