@@ -10,9 +10,6 @@
 #import "PSKAddItemViewController.h"
 #import <CoreData/CoreData.h>
 
-@interface PSKCollectionPresenterViewController : UICollectionViewController <
-    ModelsDataSourceDelegate,
-    NSFetchedResultsControllerDelegate
-    >
+@interface PSKCollectionPresenterViewController : UICollectionViewController <NSFetchedResultsControllerDelegate>
 
 @end

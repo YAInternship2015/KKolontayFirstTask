@@ -15,7 +15,7 @@
 @interface PSTableViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [ItemsOfPicture MR_findAll];
+    self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
 }
 
 #pragma mark - Table view data source
@@ -36,8 +36,8 @@
 #pragma mark - Namber of rows
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id sectionInfo = [[self.fetchedResultsController sections]objectAtIndex:section];
-    return[sectionInfo numberOfObjects];
+    
+    return[_items count];
 }
 
 #pragma mark - Cell review
@@ -56,6 +56,20 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
     [self viewDidLoad];
+}
+
+#pragma  mark - delete row with animation 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.tableView beginUpdates];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+        [item MR_deleteEntity];
+        [_items removeObjectAtIndex:indexPath.row];
+        [self.tableView endUpdates];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    }
 }
 
 @end

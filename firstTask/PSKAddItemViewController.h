@@ -8,17 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ModelsDataSourceDelegate <NSObject>
-
-- (void)dataWasChanged;
-
-@end
-
 @interface PSKAddItemViewController : UIViewController <
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
 >
-
-@property (nonatomic, weak) id <ModelsDataSourceDelegate> delegate;
 
 @end

@@ -70,7 +70,7 @@
         item.pathPicture = _pathPicture;
         item.namePicture = _nameField.text;
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        [_buttonSave setEnabled:NO];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else {
         [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString (@"OK", nil) otherButtonTitles:nil, nil] show];
