@@ -98,18 +98,6 @@ static NSString * const reuseIdentifier = @"Cell";
     });
 }
 
-#pragma mark - clear data source
-
 #warning удаление должно происходить в датасорсе, NSFetchedResultsController отреагирует на удаление модели и датасорс оповестит контроллер, что данные изменились
-- (void) deleteContent:(NSIndexPath *)_indexPath {
-    [_items removeObjectAtIndex:_indexPath.row];
-    [self.collectionView performBatchUpdates: ^{
-#warning при попытке удалить ячейку приложение падает на этой строке
-            [self.collectionView deleteItemsAtIndexPaths:@[_indexPath]];
-            PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:_indexPath];
-            [item MR_deleteEntity];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        } completion:nil];
-}
 
 @end

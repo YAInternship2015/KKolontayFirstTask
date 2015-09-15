@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PSKItemsOfPicture.h"
 
-#warning Вам не нужны две модели PSKItem и ItemsOfPicture. Ваша модель PSKItem доджны стать наследником NSManagedObject и в коде Вы работаете только с ней
-@interface PSKItem : NSObject
+@interface PSKItem : PSKItemsOfPicture
 
-@property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, strong, readonly) UIImage *image;
+//@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong) UIImage *image;
 
-- (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path;
+//- (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path;
 
 @end

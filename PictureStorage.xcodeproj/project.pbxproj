@@ -27,6 +27,7 @@
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
 		EEC69CAE1BA8323300AD405E /* PSKItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */; };
+		EEC69CB11BA8AD6900AD405E /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CB01BA8AD6900AD405E /* PSKRepository.m */; };
 		EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */; };
 		EEF3077E1B9EF3D400A2B728 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,8 @@
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
 		EEC69CAC1BA8323300AD405E /* PSKItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemsOfPicture.h; sourceTree = "<group>"; };
 		EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemsOfPicture.m; sourceTree = "<group>"; };
+		EEC69CAF1BA8AD6900AD405E /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
+		EEC69CB01BA8AD6900AD405E /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
 		EEF20AB21B9B12FB005F97D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPictureStorage.xcdatamodel; sourceTree = "<group>"; };
 		EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/libMagicalRecord.a"; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 				EE4AC70E1B770677007E900D /* PSKItem.m */,
 				EE9188151B8A694600B842FF /* PSKValidator.h */,
 				EE9188161B8A694600B842FF /* PSKValidator.m */,
+				EEC69CAF1BA8AD6900AD405E /* PSKRepository.h */,
+				EEC69CB01BA8AD6900AD405E /* PSKRepository.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */,
 				EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */,
 				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
+				EEC69CB11BA8AD6900AD405E /* PSKRepository.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
 				EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */,
 			);

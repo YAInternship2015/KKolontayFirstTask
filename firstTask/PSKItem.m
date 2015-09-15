@@ -9,36 +9,30 @@
 #import "PSKItem.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
-@interface PSKItem ()
-
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) UIImage *image;
-
-@end
-
 @implementation PSKItem
+
+@synthesize image;
 
 #pragma mark - Initialization cell for table
 
-- (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path {
+- (id)init {
     self = [super init];
     if (self) {
-        _name = name;
-        [self setPictureFromAsset:path];
+        [self setPictureFromAsset];
     }
     return self;
 }
 
 #pragma mark - get picture from asset
 
-- (void)setPictureFromAsset:(NSString *)path {
+- (void)setPictureFromAsset {
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
-    if ([path hasPrefix:@"assets-library:"]) {
+    if ([super.pathPicture hasPrefix:@"assets-library:"]) {
         ALAssetsLibrary *library = [ALAssetsLibrary new];
         __weak typeof(self) weakSelf = self;
         dispatch_async(queue, ^{
-            [library assetForURL:[NSURL URLWithString:path]
+            [library assetForURL:[NSURL URLWithString:super.pathPicture]
                      resultBlock:^(ALAsset *asset) {
                          CGImageRef imageRef = [[asset defaultRepresentation] fullResolutionImage];
                          UIImage *fullResolutionImage = [UIImage imageWithCGImage:imageRef];
@@ -51,7 +45,7 @@
         });
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     } else {
-        _image = [UIImage imageNamed:path];
+        self.image = [UIImage imageNamed:super.pathPicture];
     }
 }
 

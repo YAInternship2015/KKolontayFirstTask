@@ -8,8 +8,8 @@
 
 #import "PSTableViewController.h"
 #import "PSKCustomCell.h"
-#import "MagicalRecord/MagicalRecord.h"
-#import "PSKItemsOfPicture.h"
+
+//#import "PSKItemsOfPicture.h"
 #import "PSKItem.h"
 #import <CoreData/CoreData.h>
 
@@ -18,7 +18,7 @@
 #warning для этого контроллера справедливы все те же замечания, что и для PSKCollectionPresenterViewController
 @interface PSTableViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
 @property (nonatomic, strong) NSMutableArray *items;
 
 @end
@@ -27,8 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
+    
 }
 
 #pragma mark - Table view data source
@@ -47,7 +46,7 @@
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItem *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     PSKItem *memeberCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
     [cell setupWithItem:memeberCell];

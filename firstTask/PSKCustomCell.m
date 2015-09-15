@@ -21,7 +21,7 @@
 
 - (void)setupWithItem:(PSKItem *)item {
     _imageDisplay.image = item.image;
-    _nameImage.text = item.name;
+    _nameImage.text = item.namePicture;
 }
 
 @end
