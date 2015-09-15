@@ -9,7 +9,7 @@
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
 #import "MagicalRecord/MagicalRecord.h"
-#import "ItemsOfPicture.h"
+#import "PSKItemsOfPicture.h"
 
 @interface PSKCollectionPresenterViewController ()
 
@@ -25,8 +25,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
+    self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
 #warning добавление рекогнайзера лучше вынести в отдельный метод
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
        initWithTarget:self action:@selector(handleLongPress:)];
@@ -53,7 +53,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
     [cell setupWithItem:memberOfCell];
     return cell;
@@ -96,7 +96,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView performBatchUpdates: ^{
 #warning при попытке удалить ячейку приложение падает на этой строке
             [self.collectionView deleteItemsAtIndexPaths:@[_indexPath]];
-            ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:_indexPath];
+            PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:_indexPath];
             [item MR_deleteEntity];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         } completion:nil];

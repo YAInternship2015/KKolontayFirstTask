@@ -17,7 +17,6 @@
 		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */; };
 		EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */; };
-		EE8C9F281B9B5483002F7AF9 /* ItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */; };
 		EE9188171B8A694600B842FF /* PSKValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9188161B8A694600B842FF /* PSKValidator.m */; };
 		EEA1EF271B9EC4A000064AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893011B9EBE8500E61975 /* Foundation.framework */; };
 		EEA1EF281B9EC4AD00064AC3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF20AB21B9B12FB005F97D7 /* CoreData.framework */; };
@@ -27,6 +26,7 @@
 		EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */; };
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
+		EEC69CAE1BA8323300AD405E /* PSKItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */; };
 		EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */; };
 		EEF3077E1B9EF3D400A2B728 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */; };
 /* End PBXBuildFile section */
@@ -63,8 +63,6 @@
 		EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCollectionPresenterViewController.m; sourceTree = "<group>"; };
 		EE7BD0261B86762B0082B4A2 /* PSKItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemCollectionViewCell.h; sourceTree = "<group>"; };
 		EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemCollectionViewCell.m; sourceTree = "<group>"; };
-		EE8C9F261B9B5483002F7AF9 /* ItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsOfPicture.h; sourceTree = "<group>"; };
-		EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsOfPicture.m; sourceTree = "<group>"; };
 		EE9188151B8A694600B842FF /* PSKValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKValidator.h; sourceTree = "<group>"; };
 		EE9188161B8A694600B842FF /* PSKValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKValidator.m; sourceTree = "<group>"; };
 		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +77,8 @@
 		EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstTaskTests.m; sourceTree = "<group>"; };
 		EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewController.h; sourceTree = "<group>"; };
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
+		EEC69CAC1BA8323300AD405E /* PSKItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemsOfPicture.h; sourceTree = "<group>"; };
+		EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemsOfPicture.m; sourceTree = "<group>"; };
 		EEF20AB21B9B12FB005F97D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPictureStorage.xcdatamodel; sourceTree = "<group>"; };
 		EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/libMagicalRecord.a"; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		EE8C9F251B9B5419002F7AF9 /* ClassDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				EE8C9F261B9B5483002F7AF9 /* ItemsOfPicture.h */,
-				EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */,
+				EEC69CAC1BA8323300AD405E /* PSKItemsOfPicture.h */,
+				EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */,
 			);
 			name = ClassDataModel;
 			sourceTree = "<group>";
@@ -376,11 +376,11 @@
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
 				EE9188171B8A694600B842FF /* PSKValidator.m in Sources */,
+				EEC69CAE1BA8323300AD405E /* PSKItemsOfPicture.m in Sources */,
 				EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */,
 				EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */,
 				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
-				EE8C9F281B9B5483002F7AF9 /* ItemsOfPicture.m in Sources */,
 				EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

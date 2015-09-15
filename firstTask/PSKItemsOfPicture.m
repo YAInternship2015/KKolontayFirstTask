@@ -2,14 +2,14 @@
 //  ItemsOfPicture.m
 //  PictureStorage
 //
-//  Created by Konstantin Kolontay on 9/5/15.
+//  Created by Konstantin Kolontay on 9/15/15.
 //  Copyright (c) 2015 Konstantin Kolontay. All rights reserved.
 //
 
-#import "ItemsOfPicture.h"
+#import "PSKItemsOfPicture.h"
 
 
-@implementation ItemsOfPicture
+@implementation PSKItemsOfPicture
 
 @dynamic namePicture;
 @dynamic pathPicture;

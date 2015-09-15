@@ -9,7 +9,7 @@
 #import "PSTableViewController.h"
 #import "PSKCustomCell.h"
 #import "MagicalRecord/MagicalRecord.h"
-#import "ItemsOfPicture.h"
+#import "PSKItemsOfPicture.h"
 #import "PSKItem.h"
 
 #warning для этого контроллера справедливы все те же замечания, что и для PSKCollectionPresenterViewController
@@ -24,8 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
+    self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
 }
 
 #pragma mark - Table view data source
@@ -44,7 +44,7 @@
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     PSKItem *memeberCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
     [cell setupWithItem:memeberCell];
@@ -64,7 +64,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+        PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
         [item MR_deleteEntity];
         [_items removeObjectAtIndex:indexPath.row];
         [self.tableView endUpdates];

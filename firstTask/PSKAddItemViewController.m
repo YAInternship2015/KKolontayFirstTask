@@ -10,7 +10,7 @@
 #import "PSKValidator.h"
 #import "MagicalRecord/MagicalRecord.h"
 #import <CoreData/CoreData.h>
-#import "ItemsOfPicture.h"
+#import "PSKItemsOfPicture.h"
 
 @interface PSKAddItemViewController ()
 
@@ -67,7 +67,7 @@
     NSError *error;
 #warning тут лишний сдвиг на строке с if
         if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
-        ItemsOfPicture *item = [ItemsOfPicture MR_createEntity];
+        PSKItemsOfPicture *item = [PSKItemsOfPicture MR_createEntity];
         item.pathPicture = _pathPicture;
         item.namePicture = _nameField.text;
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

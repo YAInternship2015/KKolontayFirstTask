@@ -19,8 +19,7 @@
 #pragma mark - setup picture in cell
 
 - (void)setupWithItem:(PSKItem *)item {
-#warning здесь лишний сдвиг вправо
-       _imageItem.image = item.image;
+    _imageItem.image = item.image;
 }
 
 @end
