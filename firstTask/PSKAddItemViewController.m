@@ -65,8 +65,7 @@
 
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
-#warning тут лишний сдвиг на строке с if
-        if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
+    if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
         PSKItemsOfPicture *item = [PSKItemsOfPicture MR_createEntity];
         item.pathPicture = _pathPicture;
         item.namePicture = _nameField.text;
@@ -80,8 +79,8 @@
 
 #pragma mark - press button Cancel
 
-#warning пустой метод надо удалить
 - (IBAction)enterEnded:(id)sender {
+    //при помощи данного метода убираю с экрана клавиатуру
 }
 
 @end

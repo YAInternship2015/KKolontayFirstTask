@@ -11,7 +11,10 @@
 #import "MagicalRecord/MagicalRecord.h"
 #import "PSKItemsOfPicture.h"
 #import "PSKItem.h"
+#import <CoreData/CoreData.h>
 
+@interface PSTableViewController ()  <NSFetchedResultsControllerDelegate>
+@end
 #warning для этого контроллера справедливы все те же замечания, что и для PSKCollectionPresenterViewController
 @interface PSTableViewController ()
 

@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKAddItemViewController.h"
-#import <CoreData/CoreData.h>
 
-@interface PSTableViewController : UITableViewController <
-    NSFetchedResultsControllerDelegate
->
+@interface PSTableViewController : UITableViewController
 
 @end

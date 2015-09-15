@@ -11,6 +11,13 @@
 #import "MagicalRecord/MagicalRecord.h"
 #import "PSKItemsOfPicture.h"
 
+@interface PSKCollectionPresenterViewController () <
+NSFetchedResultsControllerDelegate,
+UIGestureRecognizerDelegate
+>
+
+@end
+
 @interface PSKCollectionPresenterViewController ()
 
 #warning не совсем понял, куда делся класс-датасорс, в котором должен жить fetchedResultsController. Контроллер должен все так же не знать, откуда берутся данные, он их получает у датасорса. Датасорс настраивает NSFetchedResultsController и выдает данные из этого контроллера, а не из выборки [ItemsOfPicture MR_findAll]. При изменении данных в NSFetchedResultsController датасорс говорит контроллеру, что нужно обновить данные в таблице
@@ -27,14 +34,17 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
     self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
-#warning добавление рекогнайзера лучше вынести в отдельный метод
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
-       initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = .5;
-    lpgr.delegate = self;
-    [self.collectionView addGestureRecognizer:lpgr];
+    [self.collectionView addGestureRecognizer:[self addRecognizer]];
 }
 
+#pragma mark - add recognizer
+
+- (UILongPressGestureRecognizer *) addRecognizer {
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5;
+    lpgr.delegate = self;
+    return lpgr;
+}
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

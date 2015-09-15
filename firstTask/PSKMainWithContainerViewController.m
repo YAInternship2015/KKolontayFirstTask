@@ -14,8 +14,7 @@
 
 @property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
 @property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
-#warning NSString *stringSegueStoryboard, и лучше назвать segueToPerformName
-@property (nonatomic, strong) NSString * stringSegueStoryboard;
+@property (nonatomic, strong) NSString * stringToPerformName;
 - (IBAction)changeView:(id)sender;
 
 @end
@@ -24,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _stringSegueStoryboard = @"collectionItems";
+    _stringToPerformName = @"collectionItems";
 }
 
 #pragma mark - load main view
@@ -38,13 +37,13 @@
 #pragma  mark - switch to collection view controller
 
 - (IBAction)changeView:(id)sender {
-    if ([_stringSegueStoryboard isEqualToString:@"collectionItems"]) {
-        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
-        _stringSegueStoryboard = @"tableItems";
+    if ([_stringToPerformName isEqualToString:@"collectionItems"]) {
+        [_containerViewControllers swapViewControllers:_stringToPerformName];
+        _stringToPerformName = @"tableItems";
     }
     else {
-        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
-        _stringSegueStoryboard = @"collectionItems";
+        [_containerViewControllers swapViewControllers:_stringToPerformName];
+        _stringToPerformName = @"collectionItems";
     }
 }
 

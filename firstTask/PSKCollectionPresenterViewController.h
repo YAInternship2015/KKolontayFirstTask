@@ -7,13 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#warning следующие два импорта не нужны в *.h файле
-#//import "PSKAddItemViewController.h"
-#import <CoreData/CoreData.h>
 
-#warning <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate> также можно перенести в *.m
-@interface PSKCollectionPresenterViewController : UICollectionViewController <NSFetchedResultsControllerDelegate,
-    UIGestureRecognizerDelegate
-    >
+@interface PSKCollectionPresenterViewController : UICollectionViewController
 
 @end
