@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
+#warning потерялся префикс приложения
 @interface ItemsOfPicture : NSManagedObject
 
 @property (nonatomic, retain) NSString *namePicture;

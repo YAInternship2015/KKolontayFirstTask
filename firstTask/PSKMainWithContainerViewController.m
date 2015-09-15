@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
 @property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
+#warning NSString *stringSegueStoryboard, и лучше назвать segueToPerformName
 @property (nonatomic, strong) NSString * stringSegueStoryboard;
 - (IBAction)changeView:(id)sender;
 

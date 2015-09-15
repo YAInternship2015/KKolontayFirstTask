@@ -22,6 +22,7 @@
 
 - (id)initWithNameAndPicture:(NSString *)name picture:(NSString *)path {
     self = [super init];
+#warning не совсем понял, зачем здесь танцы с GCD, да и получение картинки из ассетов лучше вынести в отдельный метод
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
     if (self) {

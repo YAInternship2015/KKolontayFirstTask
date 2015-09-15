@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#warning Вам не нужны две модели PSKItem и ItemsOfPicture. Ваша модель PSKItem доджны стать наследником NSManagedObject и в коде Вы работаете только с ней
 @interface PSKItem : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;

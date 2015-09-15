@@ -12,6 +12,7 @@
 #import "ItemsOfPicture.h"
 #import "PSKItem.h"
 
+#warning для этого контроллера справедливы все те же замечания, что и для PSKCollectionPresenterViewController
 @interface PSTableViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;

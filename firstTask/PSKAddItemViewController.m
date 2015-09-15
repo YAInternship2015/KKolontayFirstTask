@@ -65,6 +65,7 @@
 
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
+#warning тут лишний сдвиг на строке с if
         if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
         ItemsOfPicture *item = [ItemsOfPicture MR_createEntity];
         item.pathPicture = _pathPicture;
@@ -79,6 +80,7 @@
 
 #pragma mark - press button Cancel
 
+#warning пустой метод надо удалить
 - (IBAction)enterEnded:(id)sender {
 }
 

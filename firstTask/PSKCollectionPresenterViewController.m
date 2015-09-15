@@ -13,6 +13,7 @@
 
 @interface PSKCollectionPresenterViewController ()
 
+#warning не совсем понял, куда делся класс-датасорс, в котором должен жить fetchedResultsController. Контроллер должен все так же не знать, откуда берутся данные, он их получает у датасорса. Датасорс настраивает NSFetchedResultsController и выдает данные из этого контроллера, а не из выборки [ItemsOfPicture MR_findAll]. При изменении данных в NSFetchedResultsController датасорс говорит контроллеру, что нужно обновить данные в таблице
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSMutableArray *items;
 
@@ -26,6 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
     self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
+#warning добавление рекогнайзера лучше вынести в отдельный метод
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
        initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
@@ -88,9 +90,11 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark - clear data source
 
+#warning удаление должно происходить в датасорсе, NSFetchedResultsController отреагирует на удаление модели и датасорс оповестит контроллер, что данные изменились
 - (void) deleteContent:(NSIndexPath *)_indexPath {
     [_items removeObjectAtIndex:_indexPath.row];
     [self.collectionView performBatchUpdates: ^{
+#warning при попытке удалить ячейку приложение падает на этой строке
             [self.collectionView deleteItemsAtIndexPaths:@[_indexPath]];
             ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:_indexPath];
             [item MR_deleteEntity];
