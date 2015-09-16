@@ -7,12 +7,21 @@
 //
 
 #import "PSKContainerViewController.h"
+#import "PSKAddItemViewController.h"
+#import "PSKRepository.h"
+
+@interface PSKContainerViewController ()
+
+@property (nonatomic, strong) PSKRepository *repository;
+
+@end
 
 @implementation PSKContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _currentSegueIdentifier = @"tableItems";
+    _repository = [[PSKRepository alloc]init];
     [self performSegueWithIdentifier:_currentSegueIdentifier sender:nil];
 }
 
@@ -30,11 +39,18 @@
             [self.view addSubview:_tableViewController.view];
             [_tableViewController didMoveToParentViewController:self];
         }
+        _tableViewController.repository = _repository;
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
-        _collectionPresenterController = segue.destinationViewController;
+            _collectionPresenterController = segue.destinationViewController;
+            _collectionPresenterController.repository = _repository;
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
+    else if ([segue.identifier isEqualToString:@"addItem"]) {
+            _addItemViewController = segue.destinationViewController;
+            _addItemViewController.repository = _repository;
+    }
+
 }
 
 #pragma mark - swap from view controller to another view controller

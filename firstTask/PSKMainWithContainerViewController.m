@@ -8,12 +8,12 @@
 
 #import "PSKMainWithContainerViewController.h"
 #import "PSKContainerViewController.h"
-#import "PSKAddItemViewController.h"
+//#import "PSKAddItemViewController.h"
 
 @interface PSKMainWithContainerViewController ()
 
 @property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
-@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
+//@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
 @property (nonatomic, strong) NSString * stringToPerformName;
 - (IBAction)changeView:(id)sender;
 

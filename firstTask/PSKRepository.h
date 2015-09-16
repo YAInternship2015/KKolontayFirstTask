@@ -10,4 +10,8 @@
 
 @interface PSKRepository : NSObject
 
+- (NSMutableArray *)getItems;
+- (void) deleteItem:(NSIndexPath *)index;
+- (void)addItem:(NSString *)name pathPicture:(NSString *)path;
+
 @end

@@ -8,8 +8,9 @@
 
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
-#import "MagicalRecord/MagicalRecord.h"
-#import "PSKItemsOfPicture.h"
+//#import "MagicalRecord/MagicalRecord.h"
+#import "PSKItem.h"
+
 
 @interface PSKCollectionPresenterViewController () <
 NSFetchedResultsControllerDelegate,
@@ -20,8 +21,6 @@ UIGestureRecognizerDelegate
 
 @interface PSKCollectionPresenterViewController ()
 
-#warning не совсем понял, куда делся класс-датасорс, в котором должен жить fetchedResultsController. Контроллер должен все так же не знать, откуда берутся данные, он их получает у датасорса. Датасорс настраивает NSFetchedResultsController и выдает данные из этого контроллера, а не из выборки [ItemsOfPicture MR_findAll]. При изменении данных в NSFetchedResultsController датасорс говорит контроллеру, что нужно обновить данные в таблице
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSMutableArray *items;
 
 @end
@@ -94,10 +93,15 @@ static NSString * const reuseIdentifier = @"Cell";
     double delay = 1/2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self deleteContent:indexPath];
+        if (_items.count > 0) {
+            [self.collectionView performBatchUpdates: ^{
+            [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+            //PSKItem *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+           // [item MR_deleteEntity];
+           // [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            } completion:nil];
+        }
     });
 }
-
-#warning удаление должно происходить в датасорсе, NSFetchedResultsController отреагирует на удаление модели и датасорс оповестит контроллер, что данные изменились
 
 @end

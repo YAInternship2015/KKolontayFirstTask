@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PSTableViewController.h"
 #import "PSKCollectionPresenterViewController.h"
+#import "PSKAddItemViewController.h"
 
 @interface PSKContainerViewController : UIViewController
 
 @property (nonatomic, strong) PSTableViewController *tableViewController;
 @property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
+@property (nonatomic, strong) PSKAddItemViewController * addItemViewController;
 @property (nonatomic, strong) NSString *currentSegueIdentifier;
 - (void)swapViewControllers:(NSString *) segueIdentifier;
 

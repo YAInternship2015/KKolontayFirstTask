@@ -31,25 +31,27 @@
     return self;
 }
 
-# pragma mark - get items from repository
+#pragma mark - get items from repository
 
 - (NSMutableArray *)getItems {
     return _items;
 }
 
-- (void) deleteContent:(NSIndexPath *)index sended:(NSObject *)sender{
+- (void)deleteItem:(NSIndexPath *)index {
     [_items removeObjectAtIndex:[index row]];
-    if (_items.count > 0) {
-        if ([sender isKindOfClass:[UICollectionViewController class]] ) {
-            UICollectionViewController * temp = (UICollectionViewController *)sender;
-        
-            [temp.collectionView performBatchUpdates: ^{
-            [temp.collectionView deleteItemsAtIndexPaths:@[index]];
-            PSKItem *item = [_fetchedResultsController objectAtIndexPath:index];
-            [item MR_deleteEntity];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-            } completion:nil];
-    }
+    PSKItem *item = [_fetchedResultsController objectAtIndexPath:index];
+    [item MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
+}
+
+#pragma mark - add object
+
+- (void)addItem:(NSString *)name pathPicture:(NSString *)path {
+    PSKItem * item = [PSKItem MR_createEntity];
+    item.pathPicture = path;
+    item.namePicture = name;
+    [_items addObject:item];
+    [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
 }
 
 @end
