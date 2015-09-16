@@ -8,8 +8,9 @@
 
 #import "PSKRepository.h"
 #import "MagicalRecord/MagicalRecord.h"
-#import <CoreData/CoreData.h>
 #import "PSKItem.h"
+#import "PSKItemsOfPicture.h"
+#import <CoreData/CoreData.h>
 
 @interface PSKRepository () <NSFetchedResultsControllerDelegate>
 
@@ -25,11 +26,15 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.fetchedResultsController = [PSKItem MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-        self.items = [[NSMutableArray alloc] initWithArray:[PSKItem MR_findAll]];
+        self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+        self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
     }
     return self;
 }
+
+#pragma mark - set fetchedResultsController
+
+
 
 #pragma mark - get items from repository
 
@@ -47,7 +52,7 @@
 #pragma mark - add object
 
 - (void)addItem:(NSString *)name pathPicture:(NSString *)path {
-    PSKItem * item = [PSKItem MR_createEntity];
+    PSKItemsOfPicture * item = [PSKItemsOfPicture MR_createEntity];
     item.pathPicture = path;
     item.namePicture = name;
     [_items addObject:item];

@@ -8,18 +8,10 @@
 
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
-//#import "MagicalRecord/MagicalRecord.h"
 #import "PSKItem.h"
 
 
-@interface PSKCollectionPresenterViewController () <
-NSFetchedResultsControllerDelegate,
-UIGestureRecognizerDelegate
->
-
-@end
-
-@interface PSKCollectionPresenterViewController ()
+@interface PSKCollectionPresenterViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
 
@@ -31,8 +23,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
+   // self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.items = [_repository getItems];
     [self.collectionView addGestureRecognizer:[self addRecognizer]];
 }
 
@@ -62,9 +54,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
-    PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
-    [cell setupWithItem:memberOfCell];
+    PSKItem *item = [self.items objectAtIndex:indexPath.row];
+    //PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
+    [cell setupWithItem:item];
     return cell;
 }
 
@@ -99,6 +91,7 @@ static NSString * const reuseIdentifier = @"Cell";
             //PSKItem *item = [_fetchedResultsController objectAtIndexPath:indexPath];
            // [item MR_deleteEntity];
            // [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            [_repository deleteItem:indexPath];
             } completion:nil];
         }
     });

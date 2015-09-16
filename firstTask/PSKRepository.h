@@ -6,12 +6,15 @@
 //  Copyright (c) 2015 Konstantin Kolontay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+
 
 @interface PSKRepository : NSObject
 
 - (NSMutableArray *)getItems;
 - (void) deleteItem:(NSIndexPath *)index;
 - (void)addItem:(NSString *)name pathPicture:(NSString *)path;
+//+ (NSFetchedResultsController *)setupFetchedResultsController;
 
 @end

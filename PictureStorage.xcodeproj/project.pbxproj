@@ -13,6 +13,8 @@
 		EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B081B84723800402816 /* PSKContainerViewController.m */; };
 		EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */; };
 		EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */; };
+		EE3E58661BAA04DE00516181 /* PSKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */; };
+		EE3E58691BAA054F00516181 /* PSKItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */; };
 		EE4AC70F1B770677007E900D /* PSKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC70E1B770677007E900D /* PSKItem.m */; };
 		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */; };
@@ -26,9 +28,7 @@
 		EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */; };
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
-		EEC69CAE1BA8323300AD405E /* PSKItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */; };
 		EEC69CB11BA8AD6900AD405E /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CB01BA8AD6900AD405E /* PSKRepository.m */; };
-		EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */; };
 		EEF3077E1B9EF3D400A2B728 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +55,9 @@
 		EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKAddItemViewController.m; sourceTree = "<group>"; };
 		EE317B0D1B84ABB400402816 /* PSKMainWithContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKMainWithContainerViewController.h; sourceTree = "<group>"; };
 		EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKMainWithContainerViewController.m; sourceTree = "<group>"; };
+		EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSKModel.xcdatamodel; sourceTree = "<group>"; };
+		EE3E58671BAA054F00516181 /* PSKItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemsOfPicture.h; sourceTree = "<group>"; };
+		EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemsOfPicture.m; sourceTree = "<group>"; };
 		EE4AC70D1B770677007E900D /* PSKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItem.h; sourceTree = "<group>"; };
 		EE4AC70E1B770677007E900D /* PSKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItem.m; sourceTree = "<group>"; };
 		EE50F4001B79DF6C00CC8059 /* PSKCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomCell.h; sourceTree = "<group>"; };
@@ -78,12 +81,9 @@
 		EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstTaskTests.m; sourceTree = "<group>"; };
 		EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewController.h; sourceTree = "<group>"; };
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
-		EEC69CAC1BA8323300AD405E /* PSKItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemsOfPicture.h; sourceTree = "<group>"; };
-		EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemsOfPicture.m; sourceTree = "<group>"; };
 		EEC69CAF1BA8AD6900AD405E /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
 		EEC69CB01BA8AD6900AD405E /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
 		EEF20AB21B9B12FB005F97D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPictureStorage.xcdatamodel; sourceTree = "<group>"; };
 		EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/libMagicalRecord.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,8 +153,8 @@
 		EE8C9F251B9B5419002F7AF9 /* ClassDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				EEC69CAC1BA8323300AD405E /* PSKItemsOfPicture.h */,
-				EEC69CAD1BA8323300AD405E /* PSKItemsOfPicture.m */,
+				EE3E58671BAA054F00516181 /* PSKItemsOfPicture.h */,
+				EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */,
 			);
 			name = ClassDataModel;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 		EECCC23F1B74EBC7008AABB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */,
 				EE8C9F251B9B5419002F7AF9 /* ClassDataModel */,
-				EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */,
 				EE4AC70D1B770677007E900D /* PSKItem.h */,
 				EE4AC70E1B770677007E900D /* PSKItem.m */,
 				EE9188151B8A694600B842FF /* PSKValidator.h */,
@@ -376,12 +376,12 @@
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
 				EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */,
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
-				EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */,
 				EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
+				EE3E58691BAA054F00516181 /* PSKItemsOfPicture.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
+				EE3E58661BAA04DE00516181 /* PSKModel.xcdatamodeld in Sources */,
 				EE9188171B8A694600B842FF /* PSKValidator.m in Sources */,
-				EEC69CAE1BA8323300AD405E /* PSKItemsOfPicture.m in Sources */,
 				EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */,
 				EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */,
 				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
@@ -638,14 +638,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */ = {
+		EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */,
+				EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */,
 			);
-			currentVersion = EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */;
-			name = ModelPictureStorage.xcdatamodeld;
-			path = ../ModelPictureStorage.xcdatamodeld;
+			currentVersion = EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */;
+			path = PSKModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

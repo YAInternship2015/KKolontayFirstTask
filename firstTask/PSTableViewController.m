@@ -16,7 +16,7 @@
 
 @interface PSTableViewController ()  <NSFetchedResultsControllerDelegate>
 @end
-#warning для этого контроллера справедливы все те же замечания, что и для PSKCollectionPresenterViewController
+
 @interface PSTableViewController ()
 
 
@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _items = [_repository getItems];
 }
 
 #pragma mark - Table view data source
@@ -49,8 +49,8 @@
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSKItem *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
-    PSKItem *memeberCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
-    [cell setupWithItem:memeberCell];
+   // PSKItem *memeberCell = [_items objectAtIndex:[indexPath row]];
+    [cell setupWithItem:item];
     return cell;
 }
 
@@ -67,11 +67,12 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
-        [item MR_deleteEntity];
+       // PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+       // [item MR_deleteEntity];
         [_items removeObjectAtIndex:indexPath.row];
+        [_repository deleteItem:indexPath];
         [self.tableView endUpdates];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+       // [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
 
