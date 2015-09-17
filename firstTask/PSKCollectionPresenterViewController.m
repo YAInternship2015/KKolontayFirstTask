@@ -91,7 +91,7 @@ static NSString * const reuseIdentifier = @"Cell";
     double delay = 1/2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if (_items.count > 0) {
+        if (_items.count > 0 && _items.count >= indexPath.row) {
             [self.collectionView performBatchUpdates: ^{
             [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
             [_repository deleteItem:indexPath];

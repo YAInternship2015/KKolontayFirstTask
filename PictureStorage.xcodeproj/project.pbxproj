@@ -523,12 +523,11 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
-				"OTHER_LDFLAGS[arch=*]" = (
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-l\"MagicalRecord\"",
@@ -553,13 +552,19 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MagicalRecord\"",
+					"-framework",
+					"\"CoreData\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MyOrganisation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PictureStorage;
 				"VALID_ARCHS[sdk=*]" = "";
