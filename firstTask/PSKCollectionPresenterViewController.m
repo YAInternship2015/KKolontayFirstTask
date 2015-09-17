@@ -8,12 +8,17 @@
 
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
-#import "PSKItem.h"
+#import "PSKItemsOfPicture.h"
+#import <CoreData/CoreData.h>
 
 
-@interface PSKCollectionPresenterViewController () <UIGestureRecognizerDelegate>
+@interface PSKCollectionPresenterViewController () <
+    UIGestureRecognizerDelegate,
+    NSFetchedResultsControllerDelegate
+>
 
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -23,8 +28,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
     self.items = [_repository getItems];
+    _fetchedResultsController = _repository.fetchedResultsController;
+    [_fetchedResultsController setDelegate:self];
     [self.collectionView addGestureRecognizer:[self addRecognizer]];
 }
 
@@ -36,6 +42,7 @@ static NSString * const reuseIdentifier = @"Cell";
     lpgr.delegate = self;
     return lpgr;
 }
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -54,8 +61,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    PSKItem *item = [self.items objectAtIndex:indexPath.row];
-    //PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
+    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     [cell setupWithItem:item];
     return cell;
 }
@@ -88,9 +94,6 @@ static NSString * const reuseIdentifier = @"Cell";
         if (_items.count > 0) {
             [self.collectionView performBatchUpdates: ^{
             [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
-            //PSKItem *item = [_fetchedResultsController objectAtIndexPath:indexPath];
-           // [item MR_deleteEntity];
-           // [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             [_repository deleteItem:indexPath];
             } completion:nil];
         }

@@ -8,13 +8,16 @@
 
 #import "PSKMainWithContainerViewController.h"
 #import "PSKContainerViewController.h"
-//#import "PSKAddItemViewController.h"
+#import "PSKAddItemViewController.h"
+#import "PSKRepository.h"
+
 
 @interface PSKMainWithContainerViewController ()
 
 @property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
-//@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
-@property (nonatomic, strong) NSString * stringToPerformName;
+@property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
+@property (nonatomic, strong) NSString *stringToPerformName;
+@property (nonatomic, strong) PSKRepository *repository;
 - (IBAction)changeView:(id)sender;
 
 @end
@@ -29,8 +32,16 @@
 #pragma mark - load main view
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (_repository == nil) {
+        _repository = [[PSKRepository alloc]init];
+    }
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
+        _containerViewControllers.repository = _repository;
+    }
+    else if ([segue.identifier isEqualToString:@"addItem"]) {
+        _addItemViewController = segue.destinationViewController;
+        _addItemViewController.repository = _repository;
     }
   }
 

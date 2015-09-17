@@ -7,21 +7,14 @@
 //
 
 #import "PSKContainerViewController.h"
-#import "PSKAddItemViewController.h"
 #import "PSKRepository.h"
 
-@interface PSKContainerViewController ()
-
-@property (nonatomic, strong) PSKRepository *repository;
-
-@end
 
 @implementation PSKContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _currentSegueIdentifier = @"tableItems";
-    _repository = [[PSKRepository alloc]init];
     [self performSegueWithIdentifier:_currentSegueIdentifier sender:nil];
 }
 
@@ -29,28 +22,23 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual:@"tableItems"]) {
+        _tableViewController = segue.destinationViewController;
+        _tableViewController.repository = _repository;
         if (self.childViewControllers.count > 0) {
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0]toViewController:segue.destinationViewController];
         }
         else {
-            _tableViewController = segue.destinationViewController;
             [self addChildViewController:_tableViewController];
             _tableViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             [self.view addSubview:_tableViewController.view];
             [_tableViewController didMoveToParentViewController:self];
         }
-        _tableViewController.repository = _repository;
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
             _collectionPresenterController = segue.destinationViewController;
             _collectionPresenterController.repository = _repository;
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
-    else if ([segue.identifier isEqualToString:@"addItem"]) {
-            _addItemViewController = segue.destinationViewController;
-            _addItemViewController.repository = _repository;
-    }
-
 }
 
 #pragma mark - swap from view controller to another view controller

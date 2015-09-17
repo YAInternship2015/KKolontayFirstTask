@@ -8,8 +8,6 @@
 
 #import "PSKAddItemViewController.h"
 #import "PSKValidator.h"
-//#import "MagicalRecord/MagicalRecord.h"
-//#import <CoreData/CoreData.h>
 
 
 @interface PSKAddItemViewController ()
@@ -66,10 +64,6 @@
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
     if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
-        /*PSKItemsOfPicture *item = [PSKItemsOfPicture MR_createEntity];
-        item.pathPicture = _pathPicture;
-        item.namePicture = _nameField.text;
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];*/
         [_repository addItem:_nameField.text pathPicture:_pathPicture];
         [self.navigationController popViewControllerAnimated:YES];
     }

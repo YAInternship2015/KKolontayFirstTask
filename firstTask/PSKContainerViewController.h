@@ -17,6 +17,7 @@
 @property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
 @property (nonatomic, strong) PSKAddItemViewController * addItemViewController;
 @property (nonatomic, strong) NSString *currentSegueIdentifier;
+@property (nonatomic, strong) PSKRepository *repository;
 - (void)swapViewControllers:(NSString *) segueIdentifier;
 
 @end

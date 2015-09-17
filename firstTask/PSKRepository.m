@@ -8,13 +8,11 @@
 
 #import "PSKRepository.h"
 #import "MagicalRecord/MagicalRecord.h"
-#import "PSKItem.h"
 #import "PSKItemsOfPicture.h"
-#import <CoreData/CoreData.h>
+
 
 @interface PSKRepository () <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSMutableArray *items;
 
 @end
@@ -28,13 +26,15 @@
     if (self) {
         self.fetchedResultsController = [PSKItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
         self.items = [[NSMutableArray alloc] initWithArray:[PSKItemsOfPicture MR_findAll]];
+        for (int i=0; i < _items.count; i++) {
+            PSKItemsOfPicture *temp = [_items objectAtIndex:i];
+            if (temp.pathPicture != nil) {
+                [temp setPictureFromAsset];
+            }
+        }
     }
     return self;
 }
-
-#pragma mark - set fetchedResultsController
-
-
 
 #pragma mark - get items from repository
 
@@ -42,9 +42,11 @@
     return _items;
 }
 
+#pragma mark - delete item from repository
+
 - (void)deleteItem:(NSIndexPath *)index {
     [_items removeObjectAtIndex:[index row]];
-    PSKItem *item = [_fetchedResultsController objectAtIndexPath:index];
+    PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:index];
     [item MR_deleteEntity];
     [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
 }
@@ -55,6 +57,7 @@
     PSKItemsOfPicture * item = [PSKItemsOfPicture MR_createEntity];
     item.pathPicture = path;
     item.namePicture = name;
+    [item setPictureFromAsset];
     [_items addObject:item];
     [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
 }

@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 
 @interface PSKItemsOfPicture : NSManagedObject
 
 @property (nonatomic, retain) NSString * namePicture;
 @property (nonatomic, retain) NSString * pathPicture;
+@property (nonatomic, strong) UIImage *image;
+- (void)setPictureFromAsset;
 
 @end

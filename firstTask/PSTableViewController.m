@@ -8,19 +8,14 @@
 
 #import "PSTableViewController.h"
 #import "PSKCustomCell.h"
-
-//#import "PSKItemsOfPicture.h"
-#import "PSKItem.h"
+#import "PSKItemsOfPicture.h"
 #import <CoreData/CoreData.h>
 
 
 @interface PSTableViewController ()  <NSFetchedResultsControllerDelegate>
-@end
-
-@interface PSTableViewController ()
-
 
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -29,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _items = [_repository getItems];
+   _fetchedResultsController = _repository.fetchedResultsController;
+    [_fetchedResultsController setDelegate:self];
 }
 
 #pragma mark - Table view data source
@@ -47,9 +44,8 @@
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PSKItem *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
-   // PSKItem *memeberCell = [_items objectAtIndex:[indexPath row]];
     [cell setupWithItem:item];
     return cell;
 }
@@ -67,12 +63,8 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-       // PSKItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:indexPath];
-       // [item MR_deleteEntity];
-        [_items removeObjectAtIndex:indexPath.row];
         [_repository deleteItem:indexPath];
         [self.tableView endUpdates];
-       // [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
 

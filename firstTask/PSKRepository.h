@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 
 @interface PSKRepository : NSObject
 
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 - (NSMutableArray *)getItems;
 - (void) deleteItem:(NSIndexPath *)index;
 - (void)addItem:(NSString *)name pathPicture:(NSString *)path;
-//+ (NSFetchedResultsController *)setupFetchedResultsController;
 
 @end
