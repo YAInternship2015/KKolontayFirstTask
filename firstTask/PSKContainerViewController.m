@@ -7,6 +7,8 @@
 //
 
 #import "PSKContainerViewController.h"
+#import "PSKRepository.h"
+
 
 @implementation PSKContainerViewController
 
@@ -20,11 +22,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual:@"tableItems"]) {
+        _tableViewController = segue.destinationViewController;
+        _tableViewController.repository = _repository;
         if (self.childViewControllers.count > 0) {
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0]toViewController:segue.destinationViewController];
         }
         else {
-            _tableViewController = segue.destinationViewController;
             [self addChildViewController:_tableViewController];
             _tableViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             [self.view addSubview:_tableViewController.view];
@@ -32,7 +35,8 @@
         }
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
-        _collectionPresenterController = segue.destinationViewController;
+            _collectionPresenterController = segue.destinationViewController;
+            _collectionPresenterController.repository = _repository;
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
 }

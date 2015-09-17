@@ -8,13 +8,17 @@
 
 #import "PSKCollectionPresenterViewController.h"
 #import "PSKItemCollectionViewCell.h"
-#import "MagicalRecord/MagicalRecord.h"
-#import "ItemsOfPicture.h"
+#import "PSKItemsOfPicture.h"
+#import <CoreData/CoreData.h>
 
-@interface PSKCollectionPresenterViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@interface PSKCollectionPresenterViewController () <
+    UIGestureRecognizerDelegate,
+    NSFetchedResultsControllerDelegate
+>
+
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -24,13 +28,19 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fetchedResultsController = [ItemsOfPicture MR_fetchAllSortedBy:@"namePicture" ascending:YES withPredicate:nil groupBy:nil delegate:self];
-    self.items = [[NSMutableArray alloc] initWithArray:[ItemsOfPicture MR_findAll]];
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
-       initWithTarget:self action:@selector(handleLongPress:)];
+    self.items = [_repository getItems];
+    _fetchedResultsController = _repository.fetchedResultsController;
+    [_fetchedResultsController setDelegate:self];
+    [self.collectionView addGestureRecognizer:[self addRecognizer]];
+}
+
+#pragma mark - add recognizer
+
+- (UILongPressGestureRecognizer *) addRecognizer {
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
-    [self.collectionView addGestureRecognizer:lpgr];
+    return lpgr;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -51,9 +61,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    ItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
-    PSKItem *memberOfCell = [[PSKItem alloc]initWithNameAndPicture:item.namePicture picture:item.pathPicture];
-    [cell setupWithItem:memberOfCell];
+    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    [cell setupWithItem:item];
     return cell;
 }
 
@@ -82,20 +91,13 @@ static NSString * const reuseIdentifier = @"Cell";
     double delay = 1/2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self deleteContent:indexPath];
+        if (_items.count > 0 && _items.count >= indexPath.row) {
+            [self.collectionView performBatchUpdates: ^{
+            [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+            [_repository deleteItem:indexPath];
+            } completion:nil];
+        }
     });
-}
-
-#pragma mark - clear data source
-
-- (void) deleteContent:(NSIndexPath *)_indexPath {
-    [_items removeObjectAtIndex:_indexPath.row];
-    [self.collectionView performBatchUpdates: ^{
-            [self.collectionView deleteItemsAtIndexPaths:@[_indexPath]];
-            ItemsOfPicture *item = [_fetchedResultsController objectAtIndexPath:_indexPath];
-            [item MR_deleteEntity];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        } completion:nil];
 }
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKItem.h"
+#import "PSKItemsOfPicture.h"
 
 @interface PSKCustomCell : UITableViewCell
 
-- (void)setupWithItem:(PSKItem *)item;
+- (void)setupWithItem:(PSKItemsOfPicture *)item;
 
 @end

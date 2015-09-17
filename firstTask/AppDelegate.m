@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface AppDelegate ()
 
@@ -15,7 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOption {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"ModelPictureStorage"];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"PSKModel"];
     return YES;
 }
 

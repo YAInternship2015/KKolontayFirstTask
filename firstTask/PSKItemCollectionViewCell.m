@@ -8,6 +8,7 @@
 
 #import "PSKItemCollectionViewCell.h"
 
+
 @interface PSKItemCollectionViewCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageItem;
@@ -18,8 +19,8 @@
 
 #pragma mark - setup picture in cell
 
-- (void)setupWithItem:(PSKItem *)item {
-       _imageItem.image = item.image;
+- (void)setupWithItem:(PSKItemsOfPicture *)item {
+    _imageItem.image = item.image;
 }
 
 @end

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSKRepository.h"
+
 
 @interface PSKAddItemViewController : UIViewController <
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
 >
+
+@property (nonatomic, strong) PSKRepository *repository;
 
 @end

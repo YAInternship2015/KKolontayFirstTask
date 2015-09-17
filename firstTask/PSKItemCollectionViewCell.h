@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKItem.h"
+#import "PSKItemsOfPicture.h"
+
 
 @interface PSKItemCollectionViewCell : UICollectionViewCell
 
-- (void)setupWithItem:(PSKItem *)item;
+- (void)setupWithItem:(PSKItemsOfPicture *)item;
 
 @end

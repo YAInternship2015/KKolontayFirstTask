@@ -8,9 +8,7 @@
 
 #import "PSKAddItemViewController.h"
 #import "PSKValidator.h"
-#import "MagicalRecord/MagicalRecord.h"
-#import <CoreData/CoreData.h>
-#import "ItemsOfPicture.h"
+
 
 @interface PSKAddItemViewController ()
 
@@ -65,11 +63,8 @@
 
 - (IBAction)pressButtonSave:(id)sender {
     NSError *error;
-        if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
-        ItemsOfPicture *item = [ItemsOfPicture MR_createEntity];
-        item.pathPicture = _pathPicture;
-        item.namePicture = _nameField.text;
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    if ([PSKValidator isValidModelTitle:_nameField.text error:&error] && _pathPicture != nil) {
+        [_repository addItem:_nameField.text pathPicture:_pathPicture];
         [self.navigationController popViewControllerAnimated:YES];
     }
     else {
@@ -80,6 +75,7 @@
 #pragma mark - press button Cancel
 
 - (IBAction)enterEnded:(id)sender {
+    //при помощи данного метода убираю с экрана клавиатуру после того как ввод закончен
 }
 
 @end

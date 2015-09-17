@@ -19,9 +19,9 @@
 
 #pragma mark - Display content in cell
 
-- (void)setupWithItem:(PSKItem *)item {
+- (void)setupWithItem:(PSKItemsOfPicture *)item {
     _imageDisplay.image = item.image;
-    _nameImage.text = item.name;
+    _nameImage.text = item.namePicture;
 }
 
 @end

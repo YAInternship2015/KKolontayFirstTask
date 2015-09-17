@@ -9,12 +9,15 @@
 #import "PSKMainWithContainerViewController.h"
 #import "PSKContainerViewController.h"
 #import "PSKAddItemViewController.h"
+#import "PSKRepository.h"
+
 
 @interface PSKMainWithContainerViewController ()
 
 @property (nonatomic, strong) PSKContainerViewController *containerViewControllers;
 @property (nonatomic, strong) PSKAddItemViewController *addItemViewController;
-@property (nonatomic, strong) NSString * stringSegueStoryboard;
+@property (nonatomic, strong) NSString *stringToPerformName;
+@property (nonatomic, strong) PSKRepository *repository;
 - (IBAction)changeView:(id)sender;
 
 @end
@@ -23,27 +26,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _stringSegueStoryboard = @"collectionItems";
+    _stringToPerformName = @"collectionItems";
 }
 
 #pragma mark - load main view
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (_repository == nil) {
+        _repository = [[PSKRepository alloc]init];
+    }
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
+        _containerViewControllers.repository = _repository;
+    }
+    else if ([segue.identifier isEqualToString:@"addItem"]) {
+        _addItemViewController = segue.destinationViewController;
+        _addItemViewController.repository = _repository;
     }
   }
 
 #pragma  mark - switch to collection view controller
 
 - (IBAction)changeView:(id)sender {
-    if ([_stringSegueStoryboard isEqualToString:@"collectionItems"]) {
-        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
-        _stringSegueStoryboard = @"tableItems";
+    if ([_stringToPerformName isEqualToString:@"collectionItems"]) {
+        [_containerViewControllers swapViewControllers:_stringToPerformName];
+        _stringToPerformName = @"tableItems";
     }
     else {
-        [_containerViewControllers swapViewControllers:_stringSegueStoryboard];
-        _stringSegueStoryboard = @"collectionItems";
+        [_containerViewControllers swapViewControllers:_stringToPerformName];
+        _stringToPerformName = @"collectionItems";
     }
 }
 

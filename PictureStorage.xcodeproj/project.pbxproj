@@ -13,11 +13,11 @@
 		EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B081B84723800402816 /* PSKContainerViewController.m */; };
 		EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */; };
 		EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */; };
-		EE4AC70F1B770677007E900D /* PSKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC70E1B770677007E900D /* PSKItem.m */; };
+		EE3E58661BAA04DE00516181 /* PSKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */; };
+		EE3E58691BAA054F00516181 /* PSKItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */; };
 		EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */; };
 		EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */; };
 		EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */; };
-		EE8C9F281B9B5483002F7AF9 /* ItemsOfPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */; };
 		EE9188171B8A694600B842FF /* PSKValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9188161B8A694600B842FF /* PSKValidator.m */; };
 		EEA1EF271B9EC4A000064AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893011B9EBE8500E61975 /* Foundation.framework */; };
 		EEA1EF281B9EC4AD00064AC3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF20AB21B9B12FB005F97D7 /* CoreData.framework */; };
@@ -27,7 +27,7 @@
 		EEAAADF21B6C0E2000EB9BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAAADF01B6C0E2000EB9BD8 /* LaunchScreen.xib */; };
 		EEAAADFE1B6C0E2000EB9BD8 /* firstTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */; };
 		EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */; };
-		EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */; };
+		EEC69CB11BA8AD6900AD405E /* PSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC69CB01BA8AD6900AD405E /* PSKRepository.m */; };
 		EEF3077E1B9EF3D400A2B728 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +54,9 @@
 		EE317B0B1B8474C800402816 /* PSKAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKAddItemViewController.m; sourceTree = "<group>"; };
 		EE317B0D1B84ABB400402816 /* PSKMainWithContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKMainWithContainerViewController.h; sourceTree = "<group>"; };
 		EE317B0E1B84ABB400402816 /* PSKMainWithContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKMainWithContainerViewController.m; sourceTree = "<group>"; };
-		EE4AC70D1B770677007E900D /* PSKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItem.h; sourceTree = "<group>"; };
-		EE4AC70E1B770677007E900D /* PSKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItem.m; sourceTree = "<group>"; };
+		EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSKModel.xcdatamodel; sourceTree = "<group>"; };
+		EE3E58671BAA054F00516181 /* PSKItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemsOfPicture.h; sourceTree = "<group>"; };
+		EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemsOfPicture.m; sourceTree = "<group>"; };
 		EE50F4001B79DF6C00CC8059 /* PSKCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKCustomCell.h; sourceTree = "<group>"; };
 		EE50F4011B79DF6C00CC8059 /* PSKCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCustomCell.m; sourceTree = "<group>"; };
 		EE7893011B9EBE8500E61975 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,8 +64,6 @@
 		EE7BD01B1B8652530082B4A2 /* PSKCollectionPresenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKCollectionPresenterViewController.m; sourceTree = "<group>"; };
 		EE7BD0261B86762B0082B4A2 /* PSKItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKItemCollectionViewCell.h; sourceTree = "<group>"; };
 		EE7BD0271B86762B0082B4A2 /* PSKItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKItemCollectionViewCell.m; sourceTree = "<group>"; };
-		EE8C9F261B9B5483002F7AF9 /* ItemsOfPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsOfPicture.h; sourceTree = "<group>"; };
-		EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsOfPicture.m; sourceTree = "<group>"; };
 		EE9188151B8A694600B842FF /* PSKValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKValidator.h; sourceTree = "<group>"; };
 		EE9188161B8A694600B842FF /* PSKValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKValidator.m; sourceTree = "<group>"; };
 		EEAAADDE1B6C0E1F00EB9BD8 /* PictureStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +78,9 @@
 		EEAAADFD1B6C0E2000EB9BD8 /* firstTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstTaskTests.m; sourceTree = "<group>"; };
 		EEAAAE071B6C0E8200EB9BD8 /* PSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewController.h; sourceTree = "<group>"; };
 		EEAAAE081B6C0E8200EB9BD8 /* PSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewController.m; sourceTree = "<group>"; };
+		EEC69CAF1BA8AD6900AD405E /* PSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKRepository.h; sourceTree = "<group>"; };
+		EEC69CB01BA8AD6900AD405E /* PSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKRepository.m; sourceTree = "<group>"; };
 		EEF20AB21B9B12FB005F97D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPictureStorage.xcdatamodel; sourceTree = "<group>"; };
 		EEF3077D1B9EF3D400A2B728 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/libMagicalRecord.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +150,8 @@
 		EE8C9F251B9B5419002F7AF9 /* ClassDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				EE8C9F261B9B5483002F7AF9 /* ItemsOfPicture.h */,
-				EE8C9F271B9B5483002F7AF9 /* ItemsOfPicture.m */,
+				EE3E58671BAA054F00516181 /* PSKItemsOfPicture.h */,
+				EE3E58681BAA054F00516181 /* PSKItemsOfPicture.m */,
 			);
 			name = ClassDataModel;
 			sourceTree = "<group>";
@@ -223,12 +223,12 @@
 		EECCC23F1B74EBC7008AABB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */,
 				EE8C9F251B9B5419002F7AF9 /* ClassDataModel */,
-				EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */,
-				EE4AC70D1B770677007E900D /* PSKItem.h */,
-				EE4AC70E1B770677007E900D /* PSKItem.m */,
 				EE9188151B8A694600B842FF /* PSKValidator.h */,
 				EE9188161B8A694600B842FF /* PSKValidator.m */,
+				EEC69CAF1BA8AD6900AD405E /* PSKRepository.h */,
+				EEC69CB01BA8AD6900AD405E /* PSKRepository.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 		EEAAADD61B6C0E1F00EB9BD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Konstantin Kolontay";
 				TargetAttributes = {
 					EEAAADDD1B6C0E1F00EB9BD8 = {
@@ -371,16 +371,16 @@
 				EEAAADE71B6C0E2000EB9BD8 /* AppDelegate.m in Sources */,
 				EE317B0C1B8474C800402816 /* PSKAddItemViewController.m in Sources */,
 				EE317B091B84723800402816 /* PSKContainerViewController.m in Sources */,
-				EEF20AB61B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld in Sources */,
 				EE7BD01C1B8652530082B4A2 /* PSKCollectionPresenterViewController.m in Sources */,
 				EEAAAE091B6C0E8200EB9BD8 /* PSTableViewController.m in Sources */,
+				EE3E58691BAA054F00516181 /* PSKItemsOfPicture.m in Sources */,
 				EE50F4021B79DF6C00CC8059 /* PSKCustomCell.m in Sources */,
+				EE3E58661BAA04DE00516181 /* PSKModel.xcdatamodeld in Sources */,
 				EE9188171B8A694600B842FF /* PSKValidator.m in Sources */,
 				EE7BD0281B86762B0082B4A2 /* PSKItemCollectionViewCell.m in Sources */,
 				EE317B0F1B84ABB400402816 /* PSKMainWithContainerViewController.m in Sources */,
-				EE4AC70F1B770677007E900D /* PSKItem.m in Sources */,
+				EEC69CB11BA8AD6900AD405E /* PSKRepository.m in Sources */,
 				EEAAADE41B6C0E2000EB9BD8 /* main.m in Sources */,
-				EE8C9F281B9B5483002F7AF9 /* ItemsOfPicture.m in Sources */,
 				EE24662B1B879AD8005D09C5 /* CustomStoryboardSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +444,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -463,7 +464,7 @@
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = "arm64 armv7 armv7s i386";
@@ -503,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = i386;
@@ -522,20 +523,18 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/firstTask/**";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/firstTask/**";
-				"OTHER_LDFLAGS[arch=*]" = (
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-l\"MagicalRecord\"",
 					"-framework",
 					"\"CoreData\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "MyOrganisation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PictureStorage;
 				"REZ_SEARCH_PATHS[sdk=*]" = "";
 				"VALID_ARCHS[sdk=*]" = "";
@@ -553,13 +552,20 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = firstTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/firstTask/**";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/firstTask/**";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MagicalRecord\"",
+					"-framework",
+					"\"CoreData\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "MyOrganisation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PictureStorage;
 				"VALID_ARCHS[sdk=*]" = "";
 			};
@@ -579,6 +585,7 @@
 				);
 				INFOPLIST_FILE = firstTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyOrganisation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PictureStorageTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictureStorage.app/PictureStorage";
 			};
@@ -594,6 +601,7 @@
 				);
 				INFOPLIST_FILE = firstTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyOrganisation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PictureStorageTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictureStorage.app/PictureStorage";
 			};
@@ -632,14 +640,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EEF20AB41B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodeld */ = {
+		EE3E58641BAA04DE00516181 /* PSKModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */,
+				EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */,
 			);
-			currentVersion = EEF20AB51B9B13B7005F97D7 /* ModelPictureStorage.xcdatamodel */;
-			name = ModelPictureStorage.xcdatamodeld;
-			path = ../ModelPictureStorage.xcdatamodeld;
+			currentVersion = EE3E58651BAA04DE00516181 /* PSKModel.xcdatamodel */;
+			path = PSKModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

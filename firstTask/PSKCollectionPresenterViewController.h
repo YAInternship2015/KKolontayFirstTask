@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSKAddItemViewController.h"
-#import <CoreData/CoreData.h>
+#import "PSKRepository.h"
 
-@interface PSKCollectionPresenterViewController : UICollectionViewController <NSFetchedResultsControllerDelegate,
-    UIGestureRecognizerDelegate
-    >
+@interface PSKCollectionPresenterViewController : UICollectionViewController
+
+@property (nonatomic, strong) PSKRepository *repository;
 
 @end
