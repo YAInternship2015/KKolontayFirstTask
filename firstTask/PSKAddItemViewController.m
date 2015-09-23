@@ -18,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonSave;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+#warning IBAction можно не показывать в секции @interface
 - (IBAction)pressButtonSave:(id)sender;
 - (IBAction)enterEnded:(id)sender;
 
@@ -76,6 +78,7 @@
 
 - (IBAction)enterEnded:(id)sender {
     //при помощи данного метода убираю с экрана клавиатуру после того как ввод закончен
+#warning здесь же ничего не происходит, зачем этот метод?
 }
 
 @end

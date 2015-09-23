@@ -54,6 +54,14 @@
 #pragma mark - add object
 
 - (void)addItem:(NSString *)name pathPicture:(NSString *)path {
+#warning Новый объект проще и потокобезопаснее создавать средствами MagicalRecord
+//    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+//        PSKItemsOfPicture *item = [PSKItemsOfPicture MR_createEntityInContext:localContext];
+//        item.pathPicture = path;
+//        item.namePicture = name;
+//        [item setPictureFromAsset];
+//        [_items addObject:item];
+//    }];
     PSKItemsOfPicture * item = [PSKItemsOfPicture MR_createEntity];
     item.pathPicture = path;
     item.namePicture = name;

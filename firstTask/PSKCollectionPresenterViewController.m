@@ -17,6 +17,7 @@
     NSFetchedResultsControllerDelegate
 >
 
+#warning контроллер не должен хранить массив элементов, который собственно есть выборкой fetchedResultsController, как и сам fetchedResultsController. Получение данных и их редактирование должно происходить через интерфейс PSKRepository
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -36,6 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark - add recognizer
 
+#warning рекогнайзер дучше создавать и добавлять в сториборде
 - (UILongPressGestureRecognizer *) addRecognizer {
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
@@ -70,6 +72,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.collectionView reloadData];
+#warning вызывать вручную viewDidLoad, viewWillAppear и другие методы апирэнса контроллера нельзя. Если нужно выполнить те же методы, что и во viewDidLoad, вынесите их в какой-то отдельный метод и вызывайте его
     [self viewDidLoad];
 }
 

@@ -13,6 +13,7 @@
 
 @interface PSKContainerViewController : UIViewController
 
+#warning все это свойства действительно нужны в *.h файле? Все, к чему нет обращений извне, следует перенести в *.m файл
 @property (nonatomic, strong) PSTableViewController *tableViewController;
 @property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
 @property (nonatomic, strong) PSKAddItemViewController * addItemViewController;

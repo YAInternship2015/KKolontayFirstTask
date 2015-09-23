@@ -14,6 +14,7 @@
 
 @interface PSTableViewController ()  <NSFetchedResultsControllerDelegate>
 
+#warning здесь справедливы те же замечания, что и в CollectionView контроллере
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 

@@ -13,6 +13,7 @@
 
 @interface PSKRepository : NSObject
 
+#warning fetchedResultsController не должен быть показан в *.h, это детали внутренней реализации. Вся работа с выборкой fetchedResultsController должна происходить через интерфейс PSKRepository
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 - (NSMutableArray *)getItems;
 - (void) deleteItem:(NSIndexPath *)index;
