@@ -17,6 +17,7 @@
 @synthesize image;
 
 #pragma mark - set picture into cell
+
 - (void)setPictureFromAsset {
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);

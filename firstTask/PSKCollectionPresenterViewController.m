@@ -16,10 +16,10 @@
     UIGestureRecognizerDelegate,
     NSFetchedResultsControllerDelegate
 >
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
-#warning контроллер не должен хранить массив элементов, который собственно есть выборкой fetchedResultsController, как и сам fetchedResultsController. Получение данных и их редактирование должно происходить через интерфейс PSKRepository
-@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) PSKRepository *repository;
 
 @end
 
@@ -29,21 +29,27 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.items = [_repository getItems];
-    _fetchedResultsController = _repository.fetchedResultsController;
+    _fetchedResultsController = _repository.getFetchedResultsController;
     [_fetchedResultsController setDelegate:self];
-    [self.collectionView addGestureRecognizer:[self addRecognizer]];
+    //_tapGestureRecognizer.minimumPressDuration = .5;
+    [self.collectionView addGestureRecognizer:_tapGestureRecognizer];
 }
 
-#pragma mark - add recognizer
+#pragma mark - set repository
+
+- (void)setRepository:(PSKRepository *)repository {
+    _repository =repository;
+}
+
+/*#pragma mark - add recognizer
 
 #warning рекогнайзер дучше создавать и добавлять в сториборде
-- (UILongPressGestureRecognizer *) addRecognizer {
+ - (UILongPressGestureRecognizer *) addRecognizer {
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
     return lpgr;
-}
+}*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -55,7 +61,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    return [_items count];
+    return [[_repository getItems] count];
 }
 
 #pragma  mark - configure cells of table
@@ -63,7 +69,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [[_repository getItems] objectAtIndex:indexPath.row];
     [cell setupWithItem:item];
     return cell;
 }
@@ -72,8 +78,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.collectionView reloadData];
-#warning вызывать вручную viewDidLoad, viewWillAppear и другие методы апирэнса контроллера нельзя. Если нужно выполнить те же методы, что и во viewDidLoad, вынесите их в какой-то отдельный метод и вызывайте его
-    [self viewDidLoad];
 }
 
 #pragma mark - gecture delete
@@ -94,7 +98,8 @@ static NSString * const reuseIdentifier = @"Cell";
     double delay = 1/2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if (_items.count > 0 && _items.count >= indexPath.row) {
+        NSUInteger coutOfItems = [[_repository getItems]count];
+        if (coutOfItems > 0 && coutOfItems >= indexPath.row) {
             [self.collectionView performBatchUpdates: ^{
             [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
             [_repository deleteItem:indexPath];

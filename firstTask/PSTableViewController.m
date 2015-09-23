@@ -14,9 +14,8 @@
 
 @interface PSTableViewController ()  <NSFetchedResultsControllerDelegate>
 
-#warning здесь справедливы те же замечания, что и в CollectionView контроллере
-@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) PSKRepository *repository;
 
 @end
 
@@ -24,11 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _items = [_repository getItems];
-   _fetchedResultsController = _repository.fetchedResultsController;
+   _fetchedResultsController = _repository.getFetchedResultsController;
     [_fetchedResultsController setDelegate:self];
 }
 
+#pragma mark - set repository 
+
+- (void)setRepository:(PSKRepository *)repository {
+    _repository = repository;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -38,14 +41,14 @@
 #pragma mark - Namber of rows
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return[_items count];
+    return[[_repository getItems]count];
 }
 
 #pragma mark - Cell review
 
 - (PSKCustomCell *)tableView:(UITableView *)tableView
                                 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [[_repository getItems] objectAtIndex:indexPath.row];
     PSKCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     [cell setupWithItem:item];
     return cell;
@@ -55,7 +58,6 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
-    [self viewDidLoad];
 }
 
 #pragma  mark - delete row with animation 

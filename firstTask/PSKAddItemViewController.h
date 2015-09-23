@@ -15,7 +15,8 @@
     UINavigationControllerDelegate
 >
 
-#warning я все же за то, чтобы у каждый контроллер сам создавал себе датасорс, чтобы датасорс был не синглтоном. Но если вы уже сделали так, то по крайней мере перенесите свойство в *.m, а в *.h покажите сеттер для этого свойства. Та же ситуация с остальными контроллерами
-@property (nonatomic, strong) PSKRepository *repository;
+- (void)setRepository:(PSKRepository *)repository;
+- (IBAction)pressButtonSave:(id)sender;
+- (IBAction)enterEnded:(id)sender;
 
 @end

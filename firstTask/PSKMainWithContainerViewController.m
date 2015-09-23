@@ -37,11 +37,11 @@
     }
     if ([segue.identifier isEqualToString:@"startMainWindow"]) {
         _containerViewControllers = segue.destinationViewController;
-        _containerViewControllers.repository = _repository;
+        [_containerViewControllers setRepository:_repository];
     }
     else if ([segue.identifier isEqualToString:@"addItem"]) {
         _addItemViewController = segue.destinationViewController;
-        _addItemViewController.repository = _repository;
+        [_addItemViewController setRepository: _repository];
     }
   }
 

@@ -18,10 +18,8 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonSave;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-
-#warning IBAction можно не показывать в секции @interface
-- (IBAction)pressButtonSave:(id)sender;
-- (IBAction)enterEnded:(id)sender;
+@property (nonatomic, strong) PSKRepository *repository;
+@property (nonatomic, weak) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -32,6 +30,11 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
+#pragma mark -set repository 
+
+- (void)setRepository:(PSKRepository *)repository {
+    _repository = repository;
+}
 #pragma mark - choose image with UIImagePickerController
 
 - (IBAction)chooseImage:(id)sender {
@@ -77,8 +80,10 @@
 #pragma mark - press button Cancel
 
 - (IBAction)enterEnded:(id)sender {
-    //при помощи данного метода убираю с экрана клавиатуру после того как ввод закончен
-#warning здесь же ничего не происходит, зачем этот метод?
+    NSError *error;
+    if (![PSKValidator isValidModelTitle:_nameField.text error:&error]) {
+        [[[UIAlertView alloc]initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil]show];
+    }
 }
 
 @end

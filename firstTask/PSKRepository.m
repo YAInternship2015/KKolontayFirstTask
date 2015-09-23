@@ -14,7 +14,7 @@
 @interface PSKRepository () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
-
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation PSKRepository
@@ -54,20 +54,18 @@
 #pragma mark - add object
 
 - (void)addItem:(NSString *)name pathPicture:(NSString *)path {
-#warning Новый объект проще и потокобезопаснее создавать средствами MagicalRecord
-//    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-//        PSKItemsOfPicture *item = [PSKItemsOfPicture MR_createEntityInContext:localContext];
-//        item.pathPicture = path;
-//        item.namePicture = name;
-//        [item setPictureFromAsset];
-//        [_items addObject:item];
-//    }];
     PSKItemsOfPicture * item = [PSKItemsOfPicture MR_createEntity];
     item.pathPicture = path;
     item.namePicture = name;
     [item setPictureFromAsset];
     [_items addObject:item];
     [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
+}
+
+#pragma mark - get fetchedResultsController
+
+- (NSFetchedResultsController *)getFetchedResultsController {
+    return _fetchedResultsController;
 }
 
 @end
