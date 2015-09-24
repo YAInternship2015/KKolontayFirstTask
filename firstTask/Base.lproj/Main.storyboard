@@ -242,15 +242,15 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="tapGestureRecognizer" destination="NUV-Fc-KsI" id="VEs-vE-a22"/>
+                        <outlet property="swipePressGestureRecognizer" destination="Da3-l1-7ze" id="BHJ-0P-h0b"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRY-pT-ffF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NUV-Fc-KsI">
+                <swipeGestureRecognizer direction="right" id="Da3-l1-7ze">
                     <connections>
-                        <outlet property="delegate" destination="4Vk-JE-8Ja" id="Axn-fB-Gq8"/>
+                        <action selector="deleteItem:" destination="aFe-65-zuu" id="pab-26-sYa"/>
                     </connections>
-                </tapGestureRecognizer>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1214" y="957"/>
         </scene>

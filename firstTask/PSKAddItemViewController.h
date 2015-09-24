@@ -16,7 +16,5 @@
 >
 
 - (void)setRepository:(PSKRepository *)repository;
-- (IBAction)pressButtonSave:(id)sender;
-- (IBAction)enterEnded:(id)sender;
 
 @end
