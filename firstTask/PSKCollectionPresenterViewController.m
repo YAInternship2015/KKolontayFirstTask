@@ -17,8 +17,9 @@
     NSFetchedResultsControllerDelegate
 >
 
-@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) PSKRepository *repository;
+@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipePressGestureRecognizer;
 
 @end
 
@@ -28,19 +29,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.items = [_repository getItems];
-    _fetchedResultsController = _repository.fetchedResultsController;
+    _fetchedResultsController = _repository.getFetchedResultsController;
     [_fetchedResultsController setDelegate:self];
-    [self.collectionView addGestureRecognizer:[self addRecognizer]];
+    [self.collectionView addGestureRecognizer:_swipePressGestureRecognizer];
 }
 
-#pragma mark - add recognizer
+#pragma mark - set repository
 
-- (UILongPressGestureRecognizer *) addRecognizer {
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = .5;
-    lpgr.delegate = self;
-    return lpgr;
+- (void)setRepository:(PSKRepository *)repository {
+    _repository =repository;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -53,7 +50,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    return [_items count];
+    return [[_repository getItems] count];
 }
 
 #pragma  mark - configure cells of table
@@ -61,7 +58,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (PSKItemCollectionViewCell *)collectionView:(UICollectionView *)collectionView
                        cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PSKItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    PSKItemsOfPicture *item = [self.items objectAtIndex:indexPath.row];
+    PSKItemsOfPicture *item = [[_repository getItems] objectAtIndex:indexPath.row];
     [cell setupWithItem:item];
     return cell;
 }
@@ -70,34 +67,31 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.collectionView reloadData];
-    [self viewDidLoad];
 }
 
-#pragma mark - gecture delete
+#pragma mark - gecture delete item
 
-- (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-        return;
-    }
+- (IBAction)deleteItem:(UISwipeGestureRecognizer *)gestureRecognizer {
     CGPoint p = [gestureRecognizer locationInView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
-    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:nil context:context];
-    [UIView setAnimationDuration:1];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:cell cache:YES];
-    [UIView commitAnimations];
-    double delay = 1/2;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if (_items.count > 0 && _items.count >= indexPath.row) {
-            [self.collectionView performBatchUpdates: ^{
-            [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
-            [_repository deleteItem:indexPath];
+    if (indexPath != nil) {
+        UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        context = UIGraphicsGetCurrentContext();
+        [UIView beginAnimations:nil context:context];
+        [UIView setAnimationDuration:1.5];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:cell cache:YES];
+        [UIView commitAnimations];
+        double delay = 1/2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.collectionView performBatchUpdates: ^{
+                [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+                [_repository deleteItem:indexPath];
             } completion:nil];
+       
+            });
         }
-    });
 }
 
 @end

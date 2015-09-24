@@ -9,6 +9,14 @@
 #import "PSKContainerViewController.h"
 #import "PSKRepository.h"
 
+@interface PSKContainerViewController ()
+
+@property (nonatomic, strong) PSKRepository *repository;
+@property (nonatomic, strong) PSTableViewController *tableViewController;
+@property (nonatomic, strong) PSKCollectionPresenterViewController *collectionPresenterController;
+@property (nonatomic, strong) NSString *currentSegueIdentifier;
+
+@end
 
 @implementation PSKContainerViewController
 
@@ -18,12 +26,18 @@
     [self performSegueWithIdentifier:_currentSegueIdentifier sender:nil];
 }
 
+#pragma mark - set repository
+
+- (void)setRepository:(PSKRepository *)repository {
+    _repository = repository;
+}
+
 #pragma mark - switch between controlls
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual:@"tableItems"]) {
         _tableViewController = segue.destinationViewController;
-        _tableViewController.repository = _repository;
+        [_tableViewController setRepository:_repository];
         if (self.childViewControllers.count > 0) {
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0]toViewController:segue.destinationViewController];
         }
@@ -36,7 +50,7 @@
     }
     else if ([segue.identifier isEqualToString:@"collectionItems"]) {
             _collectionPresenterController = segue.destinationViewController;
-            _collectionPresenterController.repository = _repository;
+            [_collectionPresenterController setRepository:_repository];
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
 }

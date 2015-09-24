@@ -12,6 +12,6 @@
 
 @interface PSTableViewController : UITableViewController
 
-@property (nonatomic, strong) PSKRepository *repository;
+- (void)setRepository:(PSKRepository *)repository;
 
 @end

@@ -14,7 +14,7 @@
 @interface PSKRepository () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
-
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation PSKRepository
@@ -60,6 +60,12 @@
     [item setPictureFromAsset];
     [_items addObject:item];
     [[NSManagedObjectContext MR_defaultContext]MR_saveToPersistentStoreAndWait];
+}
+
+#pragma mark - get fetchedResultsController
+
+- (NSFetchedResultsController *)getFetchedResultsController {
+    return _fetchedResultsController;
 }
 
 @end

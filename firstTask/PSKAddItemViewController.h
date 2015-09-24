@@ -15,6 +15,6 @@
     UINavigationControllerDelegate
 >
 
-@property (nonatomic, strong) PSKRepository *repository;
+- (void)setRepository:(PSKRepository *)repository;
 
 @end
